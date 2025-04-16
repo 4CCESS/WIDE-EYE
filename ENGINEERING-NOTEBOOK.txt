@@ -10,5 +10,5 @@ N - note, FFR - for future reference, NIP - note  on installed packages
 
 4/15
 - Narrowed down demo case to mixed feed with a lot of sources covering Ukraine/Russia and Taiwan/China. Used ChatGPT to generate 100 sources of global, US, and regional news plus NGO/government feeds. 
-- Reviewed that feed to ensure sources were all valid, going to write python script to extract most common tags to generalize for future sources. 
+- Reviewed that feed to ensure sources were all valid, ended up cutting to 68, going to write python script to extract most common tags to generalize for future sources. 
 - 
