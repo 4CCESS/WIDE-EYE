@@ -11,4 +11,9 @@ N - note, FFR - for future reference, NIP - note  on installed packages
 4/15
 - Narrowed down demo case to mixed feed with a lot of sources covering Ukraine/Russia and Taiwan/China. Used ChatGPT to generate 100 sources of global, US, and regional news plus NGO/government feeds. 
 - Reviewed that feed to ensure sources were all valid, ended up cutting to 68, going to write python script to extract most common tags to generalize for future sources. 
-- 
+-
+
+4/23
+For now, let us have one dispatcher node that is constantly listening to user messages. User messages will contain the type of the information they are interested in (e.g., global disasters, politics, economics). Depending on this type, user messages are expected to contain additional information. For instance, if they are interested in global disasters, users can specify the location of interest (in coordinates) and the radius, as well as the type of global disaster (e.g., earthquake, flood, etc.). 
+
+Depending on the type of information the user is interested in, the dispatcher node will then communicate with the collector node that is in charge of fetching information from, say, GDACS which provides information about natural disasters in real-time. 
