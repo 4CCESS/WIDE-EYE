@@ -1,8 +1,10 @@
 import csv
 import feedparser
 
-INPUT_FILE = 'rss_feeds.csv'
+INPUT_FILE = 'feeds/test_feeds_valid.csv'
 OUTPUT_FILE = 'validated_feeds.csv'
+VERBOSE_ENTRIES_FILE = 'full_text_entries.txt'
+TITLE_ENTRIES_FILE = 'title_entries.txt'
 
 def validate_feed(url):
     try:
@@ -23,6 +25,27 @@ def validate_feed(url):
                 'error': ''
             }
         else:
+
+            with open(VERBOSE_ENTRIES_FILE, 'a', encoding='utf-8') as f:
+                f.write("=== FEED START ===\n")
+                f.write(f"Source: {feed.feed.get('title', '')}\n")
+
+                for entry in feed.entries:
+                    title = entry.get('title', 'No Title')
+                    published = entry.get('published', 'No Date')
+                    summary = entry.get('summary', 'No Summary')
+
+                    f.write("=== ENTRY START ===\n")
+                    f.write(f"Title    : {title}\n")
+                    f.write(f"Published: {published}\n")
+                    f.write(f"Summary  :\n{summary}\n")
+                    f.write("=== ENTRY END ===\n\n")
+
+                    with open(TITLE_ENTRIES_FILE, 'a', encoding='utf-8') as g:
+                        g.write(f"{title}\n")
+
+                
+
             return {
                 'status': 'OK',
                 'title': feed.feed.get('title', ''),

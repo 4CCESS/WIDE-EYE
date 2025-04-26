@@ -1,0 +1,54 @@
+Region,Source,URL
+International,Al Jazeera – News,https://www.aljazeera.com/xml/rss/all.xml
+International,The Guardian – World News,https://www.theguardian.com/world/rss
+International,CNN – World,http://rss.cnn.com/rss/edition_world.rss
+International,Deutsche Welle – World,https://rss.dw.com/rdf/rss-en-all
+International,France 24 – International News,https://www.france24.com/en/rss
+International,Euronews – World News,https://www.euronews.com/rss?level=theme&name=news
+International,NPR – World,https://www.npr.org/rss/rss.php?id=1004
+International,Sky News – World,https://feeds.skynews.com/feeds/rss/world.xml
+International,GlobalPost – World News,http://www.globalpost.com/rss
+International,Time – World,http://feeds2.feedburner.com/time/world
+International,Newsweek – World,https://www.newsweek.com/rss
+International,The Independent – World News,https://www.independent.co.uk/news/world/rss
+NGO/Gov,ReliefWeb – Disasters,https://reliefweb.int/disasters/rss.xml
+NGO/Gov,UN News,https://news.un.org/feed/subscribe/en/news/all/rss.xml
+NGO/Gov,USGS Earthquake Alerts,https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.atom
+NGO/Gov,NOAA Weather Alerts,https://alerts.weather.gov/cap/us.php?x=0
+NGO/Gov,ACLED Updates,https://acleddata.com/feed/
+NGO/Gov,International Crisis Group – Crisis Watch,https://www.crisisgroup.org/rss.xml
+NGO/Gov,Human Rights Watch,https://www.hrw.org/rss/news
+NGO/Gov,Amnesty International,https://www.amnesty.org/en/feed/
+NGO/Gov,Médecins Sans Frontières (MSF),https://www.doctorswithoutborders.org/rss.xml
+NGO/Gov,IMF News,https://www.imf.org/en/News/rss
+NGO/Gov,UK FCDO – Foreign Affairs News,https://www.gov.uk/government/organisations/foreign-commonwealth-development-office.atom
+Taiwan/China,Taipei Times,https://www.taipeitimes.com/xml/index.rss
+Taiwan/China,Taiwan Government Portal,https://www.taiwan.gov.tw/rss.php
+Taiwan/China,Taiwan Today,"https://api.taiwantoday.tw/en/rss.php?unit=2,6,10,15,18"
+Taiwan/China,Xinhua News,http://www.xinhuanet.com/english/rss/worldrss.xml
+Taiwan/China,South China Morning Post – China,https://www.scmp.com/rss/91/feed
+Taiwan/China,Sixth Tone,https://api.sixthtone.com/cont/output/rssApi
+Taiwan/China,Asia Times,https://asiatimes.com/feed/
+Taiwan/China,China Media Project,https://chinamediaproject.org/feed/
+Taiwan/China,Financial Times – China,https://www.ft.com/world/asia-pacific/china?format=rss
+Ukraine/Russia,Ukraine Today,https://uatv.ua/en/feed/
+Ukraine/Russia,Unian (English),https://www.unian.info/rss
+Ukraine/Russia,Interfax Ukraine (English),https://en.interfax.com.ua/news/general.rss
+Ukraine/Russia,Euromaidan Press,https://euromaidanpress.com/feed/
+Ukraine/Russia,TASS,https://tass.com/rss/v2.xml
+Ukraine/Russia,RT,https://www.rt.com/rss/news/
+Ukraine/Russia,Meduza (English),https://meduza.io/rss/en/all
+Ukraine/Russia,Institute for the Study of War,https://www.understandingwar.org/rss.xml
+Ukraine/Russia,The Moscow Times,https://www.themoscowtimes.com/rss/news
+US,The New York Times – U.S.,http://rss.nytimes.com/services/xml/rss/nyt/US.xml
+US,The Washington Post – National,http://feeds.washingtonpost.com/rss/national
+US,CBS News – U.S.,https://www.cbsnews.com/latest/rss/us
+US,Fox News – U.S.,http://feeds.foxnews.com/foxnews/national
+US,NPR – U.S. News,https://feeds.npr.org/1003/rss.xml
+US,The Hill – News,https://thehill.com/rss/syndicator/19110
+US,Los Angeles Times – U.S. News,https://www.latimes.com/california/rss2.0.xml
+US,ProPublica – Investigations,https://www.propublica.org/feeds/propublica/main
+US,The Atlantic – Politics,https://www.theatlantic.com/feed/channel/politics/
+US,FiveThirtyEight – Politics,https://fivethirtyeight.com/politics/feed/
+US,New York Post – U.S. News,https://nypost.com/news/feed/
+US,The Intercept – National Security,https://theintercept.com/feed/?lang=en

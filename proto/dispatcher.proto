@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package wide_eye;
+
+import "google/protobuf/timestamp.proto";
+
+// Service for client ↔ dispatcher communication
+service ClientDispatcher {
+  // User registration
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+
+  // User login
+  rpc Login    (LoginRequest)    returns (LoginResponse);
+
+  // Start a new task
+  rpc StartTask (TaskRequest)    returns (TaskStartResponse);
+
+  // Stream results for a given task
+  rpc StreamResults (TaskResultsRequest) returns (stream TaskResult);
+}
+
+// --- Request / Response Messages ---
+
+// Registration
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  bool   success = 1;
+  string message = 2;   // e.g., "Registration successful" or error text
+  string user_id = 3;   // Assigned user identifier
+}
+
+// Login
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  bool   success = 1;
+  string message = 2;   // e.g., "Login successful" or error text
+  string token   = 3;   // Auth token for session
+}
+
+// Task creation
+message TaskRequest {
+  string                     token      = 1; // Auth token from Login
+  string                     keywords   = 2;
+  string                     location   = 3;
+  google.protobuf.Timestamp  start_time = 4;
+  google.protobuf.Timestamp  end_time   = 5;
+}
+
+message TaskStartResponse {
+  bool   success = 1;
+  string message = 2;   // e.g., "Task started"
+  string task_id = 3;   // Unique ID assigned by dispatcher
+}
+
+// Requesting a results stream
+message TaskResultsRequest {
+  string token   = 1;
+  string task_id = 2;
+}
+
+// Individual streamed result
+message TaskResult {
+  string                     task_id   = 1;
+  string                     title     = 2;
+  string                     url       = 3;
+  google.protobuf.Timestamp  timestamp = 4;
+}

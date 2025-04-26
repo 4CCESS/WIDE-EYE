@@ -1,0 +1,68 @@
+Region,Source,URL,Status,Feed Title,Entries,Error
+International,BBC News – World,http://feeds.bbci.co.uk/news/world/rss.xml,OK,BBC News,39,
+International,Reuters – World News,https://news.google.com/rss/search?q=site%3Areuters.com&hl=en-US&gl=US&ceid=US%3Aen,OK,"""site:reuters.com"" - Google News",100,
+International,Al Jazeera – News,https://www.aljazeera.com/xml/rss/all.xml,OK,"Al Jazeera – Breaking News, World News and Video from Al Jazeera",25,
+International,The Guardian – World News,https://www.theguardian.com/world/rss,OK,World news | The Guardian,52,
+International,CNN – World,http://rss.cnn.com/rss/edition_world.rss,OK,CNN.com - RSS Channel - World,29,
+International,Associated Press – International,https://rsshub.app/apnews/topics/apf-topnews,Parse Error,,0,<unknown>:70:48: undefined entity
+International,Deutsche Welle – World,https://rss.dw.com/rdf/rss-en-all,OK,Deutsche Welle,154,
+International,France 24 – International News,https://www.france24.com/en/rss,OK,"France 24 - International breaking news, top stories and headlines",24,
+International,Euronews – World News,https://www.euronews.com/rss?level=theme&name=news,OK,News | Euronews RSS,50,
+International,NPR – World,https://www.npr.org/rss/rss.php?id=1004,OK,NPR Topics: World,10,
+International,Bloomberg – World News,https://www.bloomberg.com/feed/podcast/etf-report.xml,Parse Error,,0,<unknown>:196:10: mismatched tag
+International,Sky News – World,https://feeds.skynews.com/feeds/rss/world.xml,OK,World News - Breaking international news and headlines | Sky News,10,
+International,Voice of America – News,https://www.voanews.com/rss,Parse Error,,0,<unknown>:6:155: not well-formed (invalid token)
+International,GlobalPost – World News,http://www.globalpost.com/rss,OK,GlobalPost,10,
+International,Time – World,http://feeds2.feedburner.com/time/world,OK,World – TIME,10,
+International,The Economist – World,https://www.economist.com/international/rss.xml,Parse Error,International,300,"document declared as us-ascii, but parsed as utf-8"
+International,Newsweek – World,https://www.newsweek.com/rss,OK,Newsweek,20,
+International,The Independent – World News,https://www.independent.co.uk/news/world/rss,OK,The Independent World,97,
+US,The New York Times – U.S.,http://rss.nytimes.com/services/xml/rss/nyt/US.xml,OK,NYT > U.S. News,25,
+US,The Washington Post – National,http://feeds.washingtonpost.com/rss/national,OK,National,9,
+US,CBS News – U.S.,https://www.cbsnews.com/latest/rss/us,OK,Us - CBSNews.com,30,
+US,Fox News – U.S.,http://feeds.foxnews.com/foxnews/national,OK,U.S. News Today on Fox News,25,
+US,NPR – U.S. News,https://feeds.npr.org/1003/rss.xml,OK,NPR Topics: National,10,
+US,The Hill – News,https://thehill.com/rss/syndicator/19110,OK,Just In News,15,
+US,Los Angeles Times – U.S. News,https://www.latimes.com/california/rss2.0.xml,OK,California,100,
+US,ProPublica – Investigations,https://www.propublica.org/feeds/propublica/main,OK,ProPublica,20,
+US,The Atlantic – Politics,https://www.theatlantic.com/feed/channel/politics/,OK,Politics | The Atlantic,25,
+US,FiveThirtyEight – Politics,https://fivethirtyeight.com/politics/feed/,OK,Politics – FiveThirtyEight,20,
+US,New York Post – U.S. News,https://nypost.com/news/feed/,OK,"US News – Latest Breaking Headlines, Photos & Videos | New York Post",20,
+US,The Intercept – National Security,https://theintercept.com/feed/?lang=en,OK,The Intercept,20,
+Ukraine/Russia,Kyiv Independent,https://kyivindependent.com/feed,Parse Error,,0,<unknown>:2:0: syntax error
+Ukraine/Russia,Ukraine Today,https://uatv.ua/en/feed/,OK,Freedom,10,
+Ukraine/Russia,Unian (English),https://www.unian.info/rss,OK,News Agency UNIAN,100,
+Ukraine/Russia,Interfax Ukraine (English),https://en.interfax.com.ua/news/general.rss,OK,Facts - Interfax-Ukraine,25,
+Ukraine/Russia,Euromaidan Press,https://euromaidanpress.com/feed/,OK,Euromaidan Press,29,
+Ukraine/Russia,TASS,https://tass.com/rss/v2.xml,OK,TASS,100,
+Ukraine/Russia,RT,https://www.rt.com/rss/news/,OK,RT World News,100,
+Ukraine/Russia,Meduza (English),https://meduza.io/rss/en/all,OK,Meduza.io,30,
+Ukraine/Russia,Institute for the Study of War,https://www.understandingwar.org/rss.xml,OK,Institute for the Study of War,10,
+Ukraine/Russia,The Moscow Times,https://www.themoscowtimes.com/rss/news,OK,The Moscow Times - Independent News From Russia,50,
+Taiwan/China,Taipei Times,https://www.taipeitimes.com/xml/index.rss,OK,Taipei Times,54,
+Taiwan/China,TW Ministry of Foreign Affairs,https://en.mofa.gov.tw/OpenData.aspx?SN=07564A7F01D47BAD,Parse Error,,0,<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)>
+Taiwan/China,Taiwan Government Portal,https://www.taiwan.gov.tw/rss.php,OK,News and Releases - The E-government Entry Point of Taiwan,20,
+Taiwan/China,Taiwan Today,"https://api.taiwantoday.tw/en/rss.php?unit=2,6,10,15,18",OK,Taiwan Today - Top News,15,
+Taiwan/China,TW MOFA Press Releases,https://en.mofa.gov.tw/OpenData.aspx?SN=3273AA376FB01416,Parse Error,,0,<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)>
+Taiwan/China,TW MOFA Statements/Responses,https://en.mofa.gov.tw/OpenData.aspx?SN=E57623EED610E7DF,Parse Error,,0,<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)>
+Taiwan/China,Xinhua News,http://www.xinhuanet.com/english/rss/worldrss.xml,OK,XINHUANEWS,20,
+Taiwan/China,South China Morning Post – China,https://www.scmp.com/rss/91/feed,OK,News - South China Morning Post,50,
+Taiwan/China,Sixth Tone,https://api.sixthtone.com/cont/output/rssApi,OK,Sixth Tone RSS,51,
+Taiwan/China,Asia Times,https://asiatimes.com/feed/,OK,Asia Times,20,
+Taiwan/China,China Media Project,https://chinamediaproject.org/feed/,OK,China Media Project,10,
+Taiwan/China,Financial Times – China,https://www.ft.com/world/asia-pacific/china?format=rss,OK,China,25,
+NGO/Gov,ReliefWeb – Headlines,https://reliefweb.int/headlines/rss.xml,Parse Error,Use the API,1,text/plain is not an XML media type
+NGO/Gov,ReliefWeb – Disasters,https://reliefweb.int/disasters/rss.xml,OK,ReliefWeb - Disasters,20,
+NGO/Gov,UN News,https://news.un.org/feed/subscribe/en/news/all/rss.xml,OK,UN News - Global perspective Human stories,30,
+NGO/Gov,USGS Earthquake Alerts,https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.atom,OK,"USGS All Earthquakes, Past Hour",5,
+NGO/Gov,NOAA Weather Alerts,https://alerts.weather.gov/cap/us.php?x=0,OK,"Current watches, warnings, and advisories for United States land zones",169,
+NGO/Gov,ACLED Updates,https://acleddata.com/feed/,OK,ACLED,10,
+NGO/Gov,International Crisis Group – Crisis Watch,https://www.crisisgroup.org/rss.xml,OK,Crisis Group,10,
+NGO/Gov,Human Rights Watch,https://www.hrw.org/rss/news,OK,Human Rights Watch News,20,
+NGO/Gov,Amnesty International,https://www.amnesty.org/en/feed/,OK,Amnesty International,12,
+NGO/Gov,Médecins Sans Frontières (MSF),https://www.doctorswithoutborders.org/rss.xml,OK,Doctors Without Borders - USA - Medical aid where it is needed most. Independent. Neutral. Impartial.,10,
+NGO/Gov,World Bank – Press Releases,https://www.worldbank.org/en/news/all?rss=1,Parse Error,,0,<unknown>:37:111: not well-formed (invalid token)
+NGO/Gov,IMF News,https://www.imf.org/en/News/rss,OK,RSS,10,
+NGO/Gov,UK FCDO – Foreign Affairs News,https://www.gov.uk/government/organisations/foreign-commonwealth-development-office.atom,OK,"Foreign, Commonwealth & Development Office - Activity on GOV.UK",20,
+NGO/GOV,US DOS Europe and Eurasia,https://www.state.gov/rss-feed/europe-and-eurasia/feed/,Parse Error,,0,<unknown>:31:30: mismatched tag
+NGO/GOV,US DOS Press Releases,https://www.state.gov/rss-feed/press-releases/feed/,Parse Error,,0,<unknown>:31:30: mismatched tag

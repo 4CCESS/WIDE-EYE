@@ -1,0 +1,1395 @@
+Title: Trump: ‘Everything’s active’ on China trade talks
+Entities: [('Trump', 'PERSON'), ('‘Everything�', 'CARDINAL'), ('China', 'GPE')]
+
+Title: US senator’s town hall turns chaotic over Trump, deportations
+Entities: [('US', 'GPE'), ('Trump', 'ORG')]
+
+Title: ‘It’s about time NATO be shut down’, says Vijay Prashad
+Entities: [('NATO', 'ORG'), ('Vijay Prashad', 'PERSON')]
+
+Title: Tunisian judge orders detention of prominent lawyer Ahmed Souab
+Entities: [('Tunisian', 'NORP'), ('Ahmed Souab', 'PERSON')]
+
+Title: Video: India vows ‘loud & clear’ response to Kashmir attack
+Entities: [('India', 'GPE'), ('Kashmir', 'LOC')]
+
+Title: Trump administration considers China tariff cuts: Report
+Entities: [('Trump', 'ORG'), ('China', 'GPE')]
+
+Title: Ben-Gvir: US Republicans support bombing Gaza ‘food and aid depots’
+Entities: [('Ben-Gvir', 'PERSON'), ('US', 'GPE'), ('Republicans', 'NORP'), ('Gaza', 'GPE')]
+
+Title: Trump accuses Ukraine’s Zelenskyy of harming Russia negotiations
+Entities: [('Trump', 'ORG'), ('Ukraine�', 'ORG'), ('Zelenskyy', 'PERSON'), ('Russia', 'GPE')]
+
+Title: Pilgrims flock to St. Peter’s ahead of Pope Francis’s funeral
+Entities: [('St.', 'GPE')]
+
+Title: What we know about the funeral of Pope Francis
+Entities: [('Francis', 'PERSON')]
+
+Title: US-Iran nuclear talks resume. What’s at stake now?
+Entities: [('US', 'GPE'), ('Iran', 'GPE')]
+
+Title: Istanbul quake caused over 150 panic-driven injuries, officials say
+Entities: [('Istanbul', 'GPE'), ('over 150', 'CARDINAL')]
+
+Title: ‘I don’t know where I will go’: Refugees run out of options in Tunisia
+Entities: [('‘I', 'ORG'), ('Tunisia', 'GPE')]
+
+Title: Video: Russian attack on bus in Ukraine kills 9 as peace talks falter
+Entities: [('Russian', 'NORP'), ('Ukraine', 'GPE'), ('9', 'CARDINAL')]
+
+Title: ‘I grabbed my cat and ran’: Istanbul panics as earthquake hits
+Entities: [('Istanbul', 'GPE')]
+
+Title: China-US trade war: Can Trump win?
+Entities: [('China', 'GPE'), ('US', 'GPE'), ('Trump', 'PERSON')]
+
+Title: Jordan outlaws Muslim Brotherhood group, confiscates assets
+Entities: [('Jordan outlaws Muslim Brotherhood', 'ORG')]
+
+Title: Is Russia’s Putin ready to stop Ukraine war along current front line?
+Entities: [('Putin', 'PERSON'), ('Ukraine', 'GPE')]
+
+Title: Is US dollar dominance at risk?
+Entities: [('US', 'GPE')]
+
+Title: Six trapped under rubble after Israeli attack on Gaza City shelter kills 13
+Entities: [('Six', 'CARDINAL'), ('Israeli', 'NORP'), ('Gaza City', 'GPE'), ('13', 'CARDINAL')]
+
+Title: Why have Israel’s Gaza safe zones disappeared from its maps?
+Entities: [('Gaza', 'GPE')]
+
+Title: Deadly Israeli strike burns school and tent shelter in Gaza city
+Entities: [('Israeli', 'NORP'), ('Gaza', 'GPE')]
+
+Title: White and Black farmers still bear the scars of Zimbabwe’s land grabs
+Entities: []
+
+Title: Pope’s body moved to lie in state at St Peter’s Basilica
+Entities: [('St Peter’s', 'FAC')]
+
+Title: Manhunt under way in Kashmir after deadly attack on tourists
+Entities: [('Manhunt', 'ORG'), ('Kashmir', 'LOC')]
+
+Title: ‘The devil wants this pattern of mass death repeated’: Actors Guild of Nigeria calls for better regulation after two actors die
+Entities: [('Actors Guild of Nigeria', 'ORG'), ('two', 'CARDINAL')]
+
+Title: ‘I hope I’ll one day be at peace’: civilians seek mental health help in war-ravaged eastern DRC
+Entities: [('‘I', 'ORG'), ('I�', 'GPE'), ('one day', 'DATE'), ('DRC', 'GPE')]
+
+Title: Wild chimpanzees filmed by scientists bonding over alcoholic fruit
+Entities: []
+
+Title: Tunisian court hands prison sentences of up to 66 years in mass trial of regime opponents
+Entities: [('Tunisian', 'NORP'), ('up to 66 years', 'DATE')]
+
+Title: ‘I love my country but nobody is safe’: the plight of Cameroon’s exiles, trapped in Nigeria
+Entities: [('Cameroon�', 'NORP'), ('Nigeria', 'GPE')]
+
+Title: Congo boat disaster death toll rises to 148, with more than 100 still missing
+Entities: [('Congo', 'GPE'), ('148', 'CARDINAL'), ('more than 100', 'CARDINAL')]
+
+Title: Colombian ex-minister accuses the country’s president of drug abuse
+Entities: [('Colombian', 'NORP')]
+
+Title: Families of detainees in El Salvador and Venezuela decry Bukele’s prisoner swap offer
+Entities: [('El Salvador', 'GPE'), ('Venezuela', 'GPE')]
+
+Title: Canada election sees record high early voting, figures show
+Entities: [('Canada', 'GPE')]
+
+Title: Brazilian judges accept coup plot charges against more Bolsonaro allies
+Entities: [('Brazilian', 'NORP'), ('Bolsonaro', 'PERSON')]
+
+Title: ‘He listened to everyone’: Buenos Aires remembers pope as voice for the poor
+Entities: [('‘He', 'ORG'), ('Buenos Aires', 'GPE'), ('pope', 'PERSON')]
+
+Title: Haiti nearing ‘point of no return’ amid gang violence, UN representative warns
+Entities: [('Haiti', 'GPE'), ('UN', 'ORG')]
+
+Title: Stock markets rise as Trump backtracks on high China tariffs and firing Fed chair
+Entities: [('Trump', 'ORG'), ('China', 'GPE'), ('Fed', 'ORG')]
+
+Title: Taiwan president will not attend Pope Francis’s funeral
+Entities: [('Taiwan', 'GPE')]
+
+Title: Populist party in New Zealand introduces bill to define gender as biological
+Entities: [('New Zealand', 'GPE')]
+
+Title: Rice crisis: Japan imports grain from South Korea for first time in more than 25 years
+Entities: [('Japan', 'GPE'), ('South Korea', 'GPE'), ('first', 'ORDINAL'), ('more than 25 years', 'DATE')]
+
+Title: ‘He left an indelible impression’: Catholics across Asia-Pacific mourn the Pope
+Entities: [('impression�', 'NORP'), ('Catholics', 'NORP'), ('Asia-Pacific', 'LOC')]
+
+Title: Boeing investors brace for fallout from Trump tariffs
+Entities: [('Boeing', 'ORG'), ('Trump', 'ORG')]
+
+Title: Australia election 2025 live: AEC breakthrough in anti-Spender pamphlet investigation; Labor reveals men’s health policy
+Entities: [('Australia', 'GPE'), ('2025', 'CARDINAL'), ('AEC', 'ORG'), ('Labor', 'ORG')]
+
+Title: Giant prehistoric kangaroos preferred to ‘chill at home’ and didn’t like to go out much, scientists say
+Entities: []
+
+Title: Labor spends more than Coalition on election TV ads but Palmer’s Trumpet of Patriots leads YouTube outlay
+Entities: [('Trumpet of Patriots', 'WORK_OF_ART'), ('YouTube', 'ORG')]
+
+Title: Indonesian ambassador met senior Australian diplomats on same day Albanese accused Dutton of ‘damaging relationship’
+Entities: [('Indonesian', 'NORP'), ('Australian', 'NORP'), ('Albanese', 'PERSON'), ('Dutton', 'PERSON')]
+
+Title: Most Australians would be concerned about nuclear power station built nearby, survey shows
+Entities: [('Australians', 'NORP')]
+
+Title: Mental health experts concerned about Coalition plan to scrap workers’ right to disconnect
+Entities: []
+
+Title: US peace plan emerges as freezing of Ukraine frontlines with concessions to Putin
+Entities: [('US', 'GPE'), ('Ukraine', 'GPE'), ('Putin', 'PERSON')]
+
+Title: Labour MPs urge Starmer to back youth mobility scheme amid EU trade reset
+Entities: [('Labour', 'ORG'), ('Starmer', 'PERSON'), ('EU', 'ORG')]
+
+Title: Keir Starmer’s realignment with Europe will be a low-key one
+Entities: [('Keir', 'PERSON'), ('Europe', 'LOC'), ('one', 'CARDINAL')]
+
+Title: Trump accuses Zelenskyy of jeopardising imminent peace deal
+Entities: [('Trump', 'ORG'), ('Zelenskyy', 'PERSON')]
+
+Title: Trump claims Russia-Ukraine peace deal close but accuses Zelenskyy of harming process and having ‘no cards to play’ – as it happened
+Entities: [('Trump', 'ORG'), ('Russia', 'GPE'), ('Ukraine', 'GPE'), ('Zelenskyy', 'PERSON')]
+
+Title: Thousands from around world wait hours to visit coffin of Pope Francis
+Entities: [('Thousands', 'CARDINAL'), ('hours', 'TIME'), ('Francis', 'PERSON')]
+
+Title: Israel’s far-right security minister to visit Yale day after Mar-a-Lago dinner
+Entities: [('Yale', 'ORG')]
+
+Title: Eleven killed in Gaza school shelter as Israel continues bombing campaign
+Entities: [('Eleven', 'CARDINAL'), ('Gaza', 'GPE'), ('Israel', 'GPE')]
+
+Title: Jordan shuts local branch of Muslim Brotherhood after arrests
+Entities: [('Jordan', 'PERSON'), ('Muslim Brotherhood', 'ORG')]
+
+Title: Sharon Osbourne urges US to revoke Kneecap rappers’ visas after Israel criticism
+Entities: [('Sharon Osbourne', 'PERSON'), ('US', 'GPE'), ('Israel', 'GPE')]
+
+Title: Israel ends mention of humanitarian zones as Gaza war grinds on
+Entities: [('Israel', 'GPE'), ('Gaza', 'GPE')]
+
+Title: Trump says Hegseth is ‘doing a great job’ despite reports of second Signal chat
+Entities: [('Trump', 'ORG'), ('Hegseth', 'PERSON'), ('second', 'ORDINAL'), ('Signal', 'ORG')]
+
+Title: Kashmir attack sparks fear of fresh conflict between India and Pakistan
+Entities: [('Kashmir', 'LOC'), ('India', 'GPE'), ('Pakistan', 'GPE')]
+
+Title: India closes land border with Pakistan after 26 tourists killed in Kashmir attack
+Entities: [('India', 'GPE'), ('Pakistan', 'GPE'), ('26', 'CARDINAL'), ('Kashmir', 'LOC')]
+
+Title: At least 26 tourists killed by suspected militants in Kashmir attack
+Entities: [('At least 26', 'CARDINAL'), ('Kashmir', 'LOC')]
+
+Title: Weather tracker: Unseasonable warmth continues in eastern Europe
+Entities: [('Europe', 'LOC')]
+
+Title: Nepali-speaking Bhutanese refugees in limbo after deportation from US
+Entities: [('Nepali', 'NORP'), ('Bhutanese', 'NORP'), ('US', 'GPE')]
+
+Title: Sri Lankan police investigate photo of Buddha’s tooth relic
+Entities: [('Sri Lankan', 'NORP')]
+
+Title: Ministers braced for showdown over ‘postcode pricing’ in energy market shake-up
+Entities: []
+
+Title: Bite marks on York skeleton reveal first evidence of ‘gladiators’ fighting lions
+Entities: [('York', 'GPE'), ('first', 'ORDINAL')]
+
+Title: Rachel Reeves dashes hopes of early breakthrough in UK-US trade deal
+Entities: [('Rachel Reeves', 'PERSON'), ('UK', 'GPE'), ('US', 'GPE')]
+
+Title: Rachel Reeves looks at ending zero tax regime for low-value imports
+Entities: [('Rachel Reeves', 'PERSON'), ('zero', 'CARDINAL')]
+
+Title: MPs should not do media work that ‘monetises’ their role, says government
+Entities: []
+
+Title: Badenoch declines to criticise Jenrick over Reform coalition comments – as it happened
+Entities: [('Badenoch', 'GPE'), ('Jenrick', 'ORG'), ('�', 'PERSON')]
+
+Title: Trump ‘frustrated’ as Zelenskyy ‘moving in wrong direction’ on peace talks, White House says – live
+Entities: [('Trump ‘frustrated’ as', 'ORG'), ('Zelenskyy', 'PERSON'), ('White House', 'ORG'), ('�', 'PERSON')]
+
+Title: Florida students lobby to keep 2018 gun control law in wake of recent shooting
+Entities: [('Florida', 'GPE'), ('2018', 'DATE')]
+
+Title: New Jersey wildfire forces evacuations and reaches closed nuclear power plant
+Entities: [('New Jersey', 'GPE')]
+
+Title: Dominic Sessa and Antonio Banderas to lead Anthony Bourdain biopic
+Entities: [('Dominic Sessa', 'PERSON'), ('Antonio Banderas', 'PERSON'), ('Anthony Bourdain', 'PERSON')]
+
+Title: Judge orders bail hearing for detained student Mohsen Mahdawi next week
+Entities: [('Mohsen Mahdawi', 'PERSON'), ('next week', 'DATE')]
+
+Title: Boeing hopes to find new buyers for up to 50 planes returned by China
+Entities: [('Boeing', 'ORG'), ('up to 50', 'CARDINAL'), ('China', 'GPE')]
+
+Title: Markets digest bank earnings after recent turmoil
+Entities: []
+
+Title: Still haven't filed your taxes? Here's what you need to know
+Entities: []
+
+Title: Retail spending fell in March as consumers pull back
+Entities: [('March', 'DATE')]
+
+Title: Analysis: Fox News is about to enter the true No Spin Zone
+Entities: [('Fox News', 'ORG')]
+
+Title: Silicon Valley Bank collapse renews calls to address disparities impacting entrepreneurs of color
+Entities: [('Silicon Valley Bank', 'ORG')]
+
+Title: Not only is Lake Powell's water level plummeting because of drought, its total capacity is shrinking, too
+Entities: [("Lake Powell's", 'PERSON')]
+
+Title: These were the best and worst places for air quality in 2021, new report shows
+Entities: [('2021', 'DATE')]
+
+Title: Big-box stores could help slash emissions and save millions by putting solar panels on roofs. Why aren't more of them doing it?
+Entities: [('millions', 'CARDINAL')]
+
+Title: Look of the Week: Blackpink headline Coachella in Korean hanboks
+Entities: [('Blackpink', 'PERSON'), ('Coachella', 'GPE'), ('Korean', 'NORP')]
+
+Title: Scientists identify secret ingredient in Leonardo da Vinci paintings
+Entities: [('Leonardo da Vinci', 'PERSON')]
+
+Title: How Playboy cut ties with Hugh Hefner to create a post-MeToo brand
+Entities: [('Playboy', 'WORK_OF_ART'), ('Hugh Hefner', 'PERSON'), ('post-MeToo', 'PRODUCT')]
+
+Title: 'A definitive backslide.' Inside fashion's worrying runway trend
+Entities: []
+
+Title: Michael Jordan's 1998 NBA Finals sneakers sell for a record $2.2 million
+Entities: [('Michael Jordan', 'PERSON'), ('1998', 'DATE'), ('NBA', 'ORG'), ('a record $2.2 million', 'MONEY')]
+
+Title: The surreal facades of America's strip clubs
+Entities: [('America', 'GPE')]
+
+Title: Here's the real reason to turn on airplane mode when you fly
+Entities: []
+
+Title: 'I was up to my waist down a hippo's throat.' He survived, and here's his advice
+Entities: []
+
+Title: They bought an abandoned 'ghost house' in the Japanese countryside
+Entities: [('Japanese', 'NORP')]
+
+Title: Relaxed entry rules make it easier than ever to visit this stunning Asian nation
+Entities: [('Asian', 'NORP')]
+
+Title: The most beautiful sections of China's Great Wall
+Entities: [('China', 'GPE')]
+
+Title: Sign up to our newsletter for a weekly roundup of travel news
+Entities: [('weekly', 'DATE')]
+
+Title: Nelly Cheboi, who creates computer labs for Kenyan schoolchildren, is CNN's Hero of the Year
+Entities: [('Nelly Cheboi', 'PERSON'), ('Kenyan', 'NORP'), ('CNN', 'ORG'), ('Hero of the Year', 'WORK_OF_ART')]
+
+Title: CNN Heroes: Sharing the Spotlight
+Entities: [('CNN', 'ORG')]
+
+Title: Donate now to a Top 10 CNN Hero
+Entities: [('10', 'CARDINAL'), ('CNN', 'ORG')]
+
+Title: 0% intro APR until 2024 is 100% insane
+Entities: [('0%', 'PERCENT'), ('APR', 'ORG'), ('2024', 'DATE'), ('100%', 'PERCENT')]
+
+Title: It's official: now avoid credit card interest into 2024
+Entities: [('2024', 'DATE')]
+
+Title: Experts: this is the best cash back card of 2022
+Entities: [('2022', 'CARDINAL')]
+
+Title: Turn Your Rising Home Equity Into Cash You Can Use
+Entities: []
+
+Title: Dream Big with a Home Equity Loan
+Entities: [('Home Equity Loan', 'ORG')]
+
+Title: Want Cash Out of Your Home? Here Are Your Best Options
+Entities: []
+
+Title: Germany wants to allow Syrian refugees to visit home
+Entities: [('Germany', 'GPE'), ('Syrian', 'NORP')]
+
+Title: Seeking asylum: Is Tunisia really a 'safe country of origin?'
+Entities: [('Tunisia', 'GPE')]
+
+Title: Turkey: Powerful earthquake shakes Istanbul, injures dozens
+Entities: [('Turkey', 'GPE'), ('Istanbul', 'GPE'), ('dozens', 'CARDINAL')]
+
+Title: Conclave: Odds remain stacked against an African pope
+Entities: [('African', 'NORP')]
+
+Title: Legionnaires' outbreak in Berlin has tenants worried
+Entities: [('Berlin', 'GPE')]
+
+Title: Ukraine updates: Envoys meet in London after Rubio pulls out
+Entities: [('Ukraine', 'GPE'), ('London', 'GPE'), ('Rubio', 'PERSON')]
+
+Title: Kashmir attack: a tragedy and a security 'setback' for India
+Entities: [('Kashmir', 'LOC'), ('India', 'GPE')]
+
+Title: Refugees from Myanmar facing deep food aid cuts in Thailand
+Entities: [('Myanmar', 'GPE'), ('Thailand', 'GPE')]
+
+Title: South Korea deeply divided ahead of June election
+Entities: [('South Korea', 'GPE'), ('June', 'DATE')]
+
+Title: Jordan outlaws Muslim Brotherhood opposition group
+Entities: [('Jordan outlaws Muslim Brotherhood', 'ORG')]
+
+Title: International NFL hopefuls looking to change the game
+Entities: [('NFL', 'ORG')]
+
+Title: Bayern Munich silent on Rwanda as pressure grows
+Entities: [('Bayern Munich', 'ORG'), ('Rwanda', 'GPE')]
+
+Title: EU seeks to attract American scholars as Trump freezes funds
+Entities: [('EU', 'ORG'), ('American', 'NORP'), ('Trump', 'ORG')]
+
+Title: Kenya: Kidney probe launched, clinic denies allegations
+Entities: [('Kenya', 'GPE')]
+
+Title: Kashmir attack: India downgrades ties with Pakistan
+Entities: [('Kashmir', 'LOC'), ('India', 'GPE'), ('Pakistan', 'GPE')]
+
+Title: EU Commission fines Apple, Meta over digital law breaches
+Entities: [('EU Commission', 'ORG'), ('Apple', 'ORG'), ('Meta', 'ORG')]
+
+Title: Pope Francis' coffin transferred to St. Peter's Basilica
+Entities: [('Francis', 'PERSON'), ("St. Peter's", 'PERSON')]
+
+Title: Trump probe raises doubts over US role in IMF, World Bank
+Entities: [('Trump', 'ORG'), ('US', 'GPE'), ('IMF', 'ORG'), ('World Bank', 'ORG')]
+
+Title: YouTube turns 20: How the video site has changed the world
+Entities: [('YouTube', 'ORG'), ('20', 'CARDINAL')]
+
+Title: Report: Coral bleaching at highest level ever recorded
+Entities: []
+
+Title: With Milei 500 days in office, are Argentinians better off?
+Entities: [('500 days', 'DATE'), ('Argentinians', 'NORP')]
+
+Title: Dutch intelligence reports Russian cyber attack
+Entities: [('Dutch', 'NORP'), ('Russian', 'NORP')]
+
+Title: Painter of light: 250 years of William Turner
+Entities: [('250 years', 'DATE'), ('William Turner', 'PERSON')]
+
+Title: German beer sales down at home and abroad
+Entities: [('German', 'NORP')]
+
+Title: How is the climate crisis affecting affordable housing?
+Entities: []
+
+Title: How and where will Pope Francis be buried?
+Entities: [('Francis', 'PERSON')]
+
+Title: Sachsenhausen concentration camp: Nazi terror near Berlin
+Entities: [('Sachsenhausen', 'PERSON'), ('Nazi', 'NORP'), ('Berlin', 'GPE')]
+
+Title: As 'Easter truce' ends, what next for Ukraine peace effort?
+Entities: [('Easter', 'EVENT'), ('Ukraine', 'GPE')]
+
+Title: What happened to Germany's peace movement?
+Entities: [('Germany', 'GPE')]
+
+Title: Did Francis live up to promise as 'pope of the poor'?
+Entities: [('Francis', 'PERSON')]
+
+Title: Ukraine: Putin will 'analyze' Zelenskyy ceasefire proposal
+Entities: [('Ukraine', 'GPE'), ('Putin', 'PERSON'), ('Zelenskyy', 'PERSON')]
+
+Title: Germany: Police launch manhunt over Bad Nauheim killing
+Entities: [('Germany', 'GPE'), ('Bad Nauheim', 'PERSON')]
+
+Title: Using tech, AI to make construction jobs appeal to women
+Entities: [('AI', 'ORG')]
+
+Title: Pope Francis sits out Easter Mass, but greets crowd
+Entities: [('Francis', 'PERSON'), ('Easter Mass', 'ORG')]
+
+Title: How Orthodox Christians in Germany celebrate Easter
+Entities: [('Orthodox Christians', 'NORP'), ('Germany', 'GPE')]
+
+Title: Munich's famous river surfing spot closed after accident
+Entities: [('Munich', 'GPE')]
+
+Title: Gunman kills two in central Germany — police
+Entities: [('Gunman', 'PRODUCT'), ('two', 'CARDINAL'), ('Germany', 'GPE')]
+
+Title: Afghan footballer faces deportation from Germany
+Entities: [('Afghan', 'NORP'), ('Germany', 'GPE')]
+
+Title: Are electric motors the future of shipping?
+Entities: []
+
+Title: Germany's Easter peace marches lament war-filled world
+Entities: [('Germany', 'GPE'), ('Easter', 'GPE')]
+
+Title: Merz: My goal is to make Germany 'economically stronger'
+Entities: [('Merz', 'PERSON'), ('Germany', 'GPE')]
+
+Title: Should Africa be worried about earthquakes?
+Entities: [('Africa', 'LOC')]
+
+Title: Germany: Rochlitz supermarket stabbing leaves 2 injured
+Entities: [('Germany', 'GPE'), ('2', 'CARDINAL')]
+
+Title: Tuberculosis: An ancient killer we can't seem to defeat
+Entities: []
+
+Title: Germany: Deutsche Bahn wants billions to modernize railways
+Entities: [('Germany', 'GPE'), ('Deutsche Bahn', 'ORG'), ('billions', 'CARDINAL')]
+
+Title: Fact check: Has the Easter bunny been renamed in Germany?
+Entities: [('Easter', 'DATE'), ('Germany', 'GPE')]
+
+Title: Ukraine updates: Trump says talks 'coming to a head'
+Entities: [('Ukraine', 'GPE'), ('Trump', 'ORG')]
+
+Title: Ukraine's deserters returning to the front
+Entities: [('Ukraine', 'GPE')]
+
+Title: Venice doubles entry fee for last-minute day-trippers
+Entities: [('Venice', 'GPE'), ('last-minute', 'TIME')]
+
+Title: French program for US scientists draws flood of applicants
+Entities: [('French', 'NORP'), ('US', 'GPE')]
+
+Title: Ukraine updates: Ministers meet EU, US officials in Paris
+Entities: [('Ukraine', 'GPE'), ('EU', 'ORG'), ('US', 'GPE'), ('Paris', 'GPE')]
+
+Title: After US talks, is Europe back in the game on Ukraine?
+Entities: [('US', 'GPE'), ('Europe', 'LOC'), ('Ukraine', 'GPE')]
+
+Title: Poland: 'Hajnowka 5' on trial for aiding desperate refugees
+Entities: [('Poland', 'GPE'), ("Hajnowka 5'", 'ORG')]
+
+Title: NASA digs up new clue in search for life on Mars
+Entities: [('NASA', 'ORG'), ('Mars', 'LOC')]
+
+Title: Russia warns Germany against giving Ukraine Taurus missiles
+Entities: [('Russia', 'GPE'), ('Germany', 'GPE'), ('Ukraine Taurus', 'NORP')]
+
+Title: Russia: Why Kremlin no longer considers Taliban terrorists
+Entities: [('Russia', 'GPE'), ('Kremlin', 'ORG'), ('Taliban', 'ORG')]
+
+Title: Germans know next to nothing about their chancellor's health
+Entities: [('Germans', 'NORP')]
+
+Title: Bayern Munich's Kim Min-jae pushed beyond his limit
+Entities: [("Bayern Munich's", 'ORG'), ('Kim Min-jae', 'PERSON')]
+
+Title: Germany: Teen's home searched over suspected ricin plot
+Entities: [('Germany', 'GPE'), ('Teen', 'PERSON')]
+
+Title: Germany: Jet carrying at-risk Afghans stirs debate
+Entities: [('Germany', 'GPE'), ('Afghans', 'NORP')]
+
+Title: Are endangered fungi not 'cute enough' to be saved?
+Entities: []
+
+Title: Marine researchers reel in first footage of colossal squid
+Entities: [('first', 'ORDINAL')]
+
+Title: Rugby Australia accuses France of 'poaching' younger players
+Entities: [('Rugby Australia', 'ORG'), ('France', 'GPE')]
+
+Title: German firms eye Bangladesh amid US-China tariff war
+Entities: [('German', 'NORP'), ('Bangladesh', 'GPE'), ('US', 'GPE'), ('China', 'GPE')]
+
+Title: How Trump's trade war upends Germany's economic model
+Entities: [('Trump', 'ORG'), ('Germany', 'GPE')]
+
+Title: Why Brazil faces a water crisis
+Entities: [('Brazil', 'GPE')]
+
+Title: EU tightens asylum rules with list of 7 safe countries
+Entities: [('EU', 'ORG'), ('7', 'CARDINAL')]
+
+Title: Serhou Guirassy: Africa's Champions League record-breaker
+Entities: [('Serhou Guirassy', 'PERSON'), ('Africa', 'LOC'), ('Champions League', 'ORG')]
+
+Title: Cricket: 'Afghanistan women's history is starting again'
+Entities: [('Afghanistan', 'GPE')]
+
+Title: Trump tariff turmoil: Euro emerges as safe haven
+Entities: []
+
+Title: Free money for all: Germany's universal basic income experiment
+Entities: [('Germany', 'GPE')]
+
+Title: Five percent of US cancers may be caused by medical imaging radiation
+Entities: [('Five percent', 'PERCENT'), ('US', 'GPE')]
+
+Title: Amid EU's hottest year cities face more floods, extreme heat
+Entities: [('EU', 'ORG')]
+
+Title: Is synthetic hair a health risk for Black women in the USA?
+Entities: [('USA', 'GPE')]
+
+Title: Concern grows over how far oil prices could plunge amid trade war shock
+Entities: []
+
+Title: German cartel office clears UniCredit stake in Commerzbank
+Entities: [('German', 'NORP'), ('UniCredit', 'ORG'), ('Commerzbank', 'ORG')]
+
+Title: US remains by far the top market for German exports
+Entities: [('US', 'GPE'), ('German', 'NORP')]
+
+Title: Psychoactive drug pollution makes fish less risk-averse
+Entities: []
+
+Title: Nobel literature prize winner Mario Vargas Llosa dies
+Entities: [('Nobel', 'WORK_OF_ART'), ('Mario Vargas Llosa', 'PERSON')]
+
+Title: Is our mindset blocking climate action?
+Entities: []
+
+Title: Berlin building boom on the horizon?
+Entities: [('Berlin', 'GPE')]
+
+Title: Firefighters tackle several wildfires in western Germany
+Entities: [('Germany', 'GPE')]
+
+Title: Tear gas attack at Hamburg's Miniatur Wunderland injures 46
+Entities: [('Hamburg', 'GPE'), ('Miniatur Wunderland', 'ORG'), ('46', 'CARDINAL')]
+
+Title: US tariffs could be a boon for Turkey, exporters say
+Entities: [('US', 'GPE'), ('Turkey', 'GPE')]
+
+Title: Germany continues search for last living Nazi criminals
+Entities: [('Germany', 'GPE'), ('Nazi', 'NORP')]
+
+Title: Germany: No return to compulsory military service
+Entities: [('Germany', 'GPE')]
+
+Title: Shipping nations agree on historic greenhouse gas tax
+Entities: []
+
+Title: US: RFK Jr. says there is an 'autism epidemic.' Is it true?
+Entities: [('US', 'GPE'), ('RFK Jr.', 'PERSON')]
+
+Title: Will the new German government fix the economy?
+Entities: [('German', 'NORP')]
+
+Title: Trump tariffs: Will trade war hasten US, China decoupling?
+Entities: [('US', 'GPE'), ('China', 'GPE')]
+
+Title: Coal: What's the big deal?
+Entities: []
+
+Title: Susan Sontag and the US under Trump
+Entities: [('Susan Sontag', 'PERSON'), ('US', 'GPE'), ('Trump', 'ORG')]
+
+Title: Germany's new government makes sport a top priority
+Entities: [('Germany', 'GPE')]
+
+Title: Trump tariffs on hold — except China: What happens next?
+Entities: [('China', 'GPE')]
+
+Title: Trump tariffs drive China, EU to diversify trade
+Entities: [('China', 'GPE'), ('EU', 'ORG')]
+
+Title: Josephine Baker: Dancer, activist and spy against the Nazis
+Entities: [('Josephine Baker', 'PERSON'), ('Nazis', 'NORP')]
+
+Title: Trump tariffs: US to charge 145% on Chinese goods
+Entities: [('US', 'GPE'), ('145%', 'PERCENT'), ('Chinese', 'NORP')]
+
+Title: Los Angeles Olympics: More women than men will compete
+Entities: [('Los Angeles Olympics', 'ORG')]
+
+Title: EU eyes deal with US amid temporary trade truce
+Entities: [('EU', 'ORG'), ('US', 'GPE')]
+
+Title: Germany: Unusually dry spring affecting lakes and rivers
+Entities: [('Germany', 'GPE')]
+
+Title: Glitter: Shiny stuff of dreams, drama and eco-dilemmas
+Entities: []
+
+Title: Prostate cancer: A new at-home saliva test beats blood test
+Entities: []
+
+Title: German fencer talks about bulimia and calls for change
+Entities: [('German', 'NORP')]
+
+Title: Boycott USA! Trump tariffs prompt backlash against US goods
+Entities: [('Boycott USA', 'ORG'), ('US', 'GPE')]
+
+Title: Trump authorizes 90-day pause on most tariffs
+Entities: [('Trump', 'ORG'), ('90-day', 'DATE')]
+
+Title: Unfazed by Trump's tariffs, Mexico hopes for a better deal
+Entities: [('Trump', 'ORG'), ('Mexico', 'GPE')]
+
+Title: World Press Photo accused of promoting Russian propaganda
+Entities: [('World Press Photo', 'ORG'), ('Russian', 'NORP')]
+
+Title: What is a trade war and how big is the US-China one?
+Entities: [('US', 'GPE'), ('China', 'GPE')]
+
+Title: Hansi Flick at Barcelona: A great coaching return
+Entities: [('Hansi Flick', 'PERSON'), ('Barcelona', 'GPE')]
+
+Title: Trump tariffs: Why won't countries buy US meat products?
+Entities: [('US', 'GPE')]
+
+Title: After Berlinale success, Iranian director duo sentenced to prison
+Entities: [('Berlinale', 'PERSON'), ('Iranian', 'NORP')]
+
+Title: What's really behind Trump's 'reciprocal' tariffs?
+Entities: [('Trump', 'ORG')]
+
+Title: Your brain looks like this when you look at abstract art
+Entities: []
+
+Title: Can French 'war culture' lead Europe's rearmament push?
+Entities: [('French', 'NORP'), ('Europe', 'LOC')]
+
+Title: How harmful are 'forever chemicals?'
+Entities: []
+
+Title: Why do many people still believe in witches?
+Entities: []
+
+Title: Germany's family-friendly museums
+Entities: [('Germany', 'GPE')]
+
+Title: Mallorca: Spanish island braces for busy tourist season
+Entities: [('Mallorca', 'GPE'), ('Spanish', 'NORP')]
+
+Title: Netflix's 'Adolescence': Teen minds on screen
+Entities: [('Netflix', 'ORG')]
+
+Title: Pushy sporting parents: How far is too far?
+Entities: []
+
+Title: Wind energy: How to build even better wind turbines
+Entities: []
+
+Title: Sexist chants shouted at female referee prompt investigation
+Entities: []
+
+Title: 'A scary place': Jason Stanley on leaving Trump's America
+Entities: [('Jason Stanley', 'PERSON'), ("Trump's America", 'ORG')]
+
+Title: Climate observatory with edge over satellites faces DOGE ax
+Entities: [('DOGE', 'ORG')]
+
+Title: Vintage fashion hype: Gen Z on a treasure hunt
+Entities: [('Gen Z', 'WORK_OF_ART')]
+
+Title: How US tourism is affected by Trump's policies
+Entities: [('US', 'GPE'), ('Trump', 'ORG')]
+
+Title: Icon of postwar art: Joseph Beuys' unclear views on the Nazi regime
+Entities: [("Joseph Beuys'", 'PERSON'), ('Nazi', 'NORP')]
+
+Title: What are nutria, and how could they possibly be a problem?
+Entities: []
+
+Title: Netflix series 'Adolescence': Teen masculinity in crisis
+Entities: [('Netflix', 'ORG')]
+
+Title: Lise Klaveness: 'Football is in a critical time'
+Entities: [("Lise Klaveness: '", 'PERSON')]
+
+Title: Space junk damaging satellites: How do we remove it?
+Entities: []
+
+Title: Val Kilmer: 'Batman' and 'Doors' actor passes away at 65
+Entities: [('Val Kilmer', 'PERSON'), ('Batman', 'WORK_OF_ART'), ('65', 'CARDINAL')]
+
+Title: April Fool's Day: Why the press is now avoiding pranks
+Entities: [("April Fool's Day", 'ORG')]
+
+Title: How Brexit continues to affect tourism
+Entities: [('Brexit', 'PERSON')]
+
+Title: Germany goalkeeper Almuth Schult to retire
+Entities: [('Germany', 'GPE'), ('Almuth Schult', 'PERSON')]
+
+Title: Thomas Müller and Bayern Munich: The end of an era?
+Entities: [('Thomas Müller', 'PERSON'), ('Bayern Munich', 'ORG')]
+
+Title: Off your phone! Screen use in bed raises insomnia risk 59%
+Entities: [('59%', 'PERCENT')]
+
+Title: Turkey's culture scene fears repression amid protests
+Entities: [('Turkey', 'GPE')]
+
+Title: A new drug makes your blood toxic to mosquitoes
+Entities: []
+
+Title: Myanmar-Thailand earthquake: Making buildings more resilient
+Entities: [('Myanmar', 'GPE'), ('Thailand', 'GPE')]
+
+Title: Spanish court overturns Dani Alves' sexual assault conviction
+Entities: [('Spanish', 'NORP'), ("Dani Alves'", 'PERSON')]
+
+Title: Ovechkin breaks NHL goal record but Putin link casts shadow
+Entities: [('Ovechkin', 'PERSON'), ('NHL', 'ORG'), ('Putin', 'PERSON')]
+
+Title: Myanmar, Thailand quake: Everything you need to know about earthquakes
+Entities: [('Myanmar', 'GPE'), ('Thailand', 'GPE')]
+
+Title: Wolfsburg crash out of Champions League after Barcelona loss
+Entities: [('Wolfsburg', 'ORG'), ('Champions League', 'ORG'), ('Barcelona', 'GPE')]
+
+Title: 23andMe: Privacy risks of gene data being sold or leaked
+Entities: []
+
+Title: Dear US researchers: Welcome to Germany!
+Entities: [('US', 'GPE'), ('Germany', 'GPE')]
+
+Title: Lawsuit against the ATP und WTA: Game, set, reform?
+Entities: [('ATP', 'ORG'), ('WTA', 'ORG')]
+
+Title: Colorectal cancer rates are rising in under 50s
+Entities: [('under 50s', 'DATE')]
+
+Title: Scholz: US risks missing economic gains from climate action
+Entities: [('US', 'GPE')]
+
+Title: Greenland football wants world stage, with or without Trump
+Entities: [('Greenland', 'GPE'), ('Trump', 'ORG')]
+
+Title: DSD athletes ban: How testosterone ruined an Olympic dream
+Entities: [('DSD', 'ORG'), ('Olympic', 'LOC')]
+
+Title: Lula's climate betrayal? Brazil eyes oil expansion
+Entities: [('Lula', 'PERSON'), ('Brazil', 'GPE')]
+
+Title: Gaza: How safe is the Al-Mawasi evacuation zone?
+Entities: [('Gaza', 'GPE')]
+
+Title: Kenyan president visits China amid tariff pressure
+Entities: [('Kenyan', 'NORP'), ('China', 'GPE')]
+
+Title: Aviation and tariffs: globalised industry braces for impact
+Entities: []
+
+Title: Two for one? Trump eyes deal with Russia ally Iran
+Entities: [('Two', 'CARDINAL'), ('Russia', 'GPE'), ('Iran', 'GPE')]
+
+Title: EU fines Apple and Meta €700 million for digital violations: What happens next?
+Entities: [('EU', 'ORG'), ('Apple', 'ORG'), ('Meta', 'ORG'), ('million', 'CARDINAL')]
+
+Title: 'A very special energy': Pope Francis lies in state at the Vatican
+Entities: [('Francis', 'PERSON'), ('Vatican', 'FAC')]
+
+Title: A trap? Behind Putin’s change of heart on direct talks with Ukraine
+Entities: [('Ukraine', 'GPE')]
+
+Title: Trump's foreign aid cuts are a 'slow-running disaster', former USAID administrator says
+Entities: [('Trump', 'ORG'), ('USAID', 'ORG')]
+
+Title: 'I Shall Not Hate': A Palestinian doctor's call for peace
+Entities: [('Palestinian', 'NORP')]
+
+Title: Auto Shanghai showcases new EV era despite tariff speedbumps
+Entities: [('Auto Shanghai', 'ORG'), ('EV', 'ORG')]
+
+Title: Macron announces economic deals with Madagascar on first official visit
+Entities: [('Macron', 'ORG'), ('Madagascar', 'LOC'), ('first', 'ORDINAL')]
+
+Title: Disputed Kashmir witnesses worst attack on civilians in years
+Entities: [('Kashmir', 'LOC'), ('years', 'DATE')]
+
+Title: India ramps up security in Kashmir as manhunt continues
+Entities: [('India', 'GPE'), ('Kashmir', 'LOC')]
+
+Title: Ukraine peace talks downgraded in London amid continued Russian strikes
+Entities: [('Ukraine', 'GPE'), ('London', 'GPE'), ('Russian', 'NORP')]
+
+Title: 200 French media publications sue Meta, alleging unlawful business practices
+Entities: [('200', 'CARDINAL'), ('French', 'NORP'), ('Meta', 'ORG')]
+
+Title: Thousands pay their final respects to late Pontiff Francis in Vatican
+Entities: [('Thousands', 'CARDINAL'), ('Francis', 'PERSON'), ('Vatican', 'GPE')]
+
+Title: New Paris exhibition uses art to tell the story of artificial intelligence
+Entities: [('Paris', 'GPE')]
+
+Title: Pope Francis lies in state as St. Peter’s Basilica opens to public
+Entities: [('Francis', 'PERSON'), ('St.', 'GPE')]
+
+Title: Abbas urges Hamas to free hostages as Israeli strikes kill at least 36 in Gaza
+Entities: [('Abbas', 'PERSON'), ('Hamas', 'ORG'), ('Israeli', 'NORP'), ('at least 36', 'CARDINAL'), ('Gaza', 'GPE')]
+
+Title: American Rockettes dance company celebrates its 100th anniversary
+Entities: [('American Rockettes', 'ORG'), ('100th', 'ORDINAL')]
+
+Title: Anti-terrorism prosecutors investigate latest incidents at French prisons
+Entities: [('French', 'NORP')]
+
+Title: El Salvador’s president slams Venezuela’s Maduro for rejecting his prisoner swap proposal
+Entities: [('El', 'GPE'), ('Venezuela�', 'NORP'), ('Maduro', 'ORG')]
+
+Title: Powerful 6.2-magnitude quake hits off Istanbul coast, injuring at least 150
+Entities: [('6.2-magnitude', 'QUANTITY'), ('Istanbul', 'GPE'), ('at least 150', 'CARDINAL')]
+
+Title: Twenty years of YouTube: How the site has revolutionised the internet
+Entities: [('Twenty years', 'DATE')]
+
+Title: Jordan bans Muslim Brotherhood in move that threatens largest opposition party
+Entities: [('Jordan', 'GPE'), ('Muslim Brotherhood', 'ORG')]
+
+Title: Protests erupt in cities across India after at least 26 killed in Kashmir shooting
+Entities: [('India', 'GPE'), ('at least 26', 'CARDINAL'), ('Kashmir', 'LOC')]
+
+Title: Pope Francis lies in state as Vatican begins 3 days of public mourning
+Entities: [('Francis', 'PERSON'), ('Vatican', 'FAC'), ('3 days', 'DATE')]
+
+Title: Latest news bulletin | April 23rd – Evening
+Entities: [('April 23rd', 'DATE')]
+
+Title: Italy rolls out major security plan for funeral of Pope Francis
+Entities: [('Italy', 'GPE'), ('Francis', 'PERSON')]
+
+Title: Macron's office denies reports of another snap election in France
+Entities: [('Macron', 'ORG'), ('France', 'GPE')]
+
+Title: Poland's top diplomat decries Russia's war in Ukraine: 'Don't you have enough land?'
+Entities: [('Poland', 'GPE'), ('Russia', 'GPE'), ('Ukraine', 'GPE')]
+
+Title: Pope Francis' funeral fitting for a pontiff 'but not a king' as mourners say their 'final goodbye'
+Entities: [('Francis', 'PERSON')]
+
+Title: Israeli airstrike on Gaza school shelter kills 23, including children
+Entities: [('Israeli', 'NORP'), ('Gaza', 'GPE'), ('23', 'CARDINAL')]
+
+Title: Ceasefire in Ukraine: High-level talks in London downgraded as Rubio skips meeting
+Entities: [('Ceasefire', 'GPE'), ('Ukraine', 'GPE'), ('London', 'GPE'), ('Rubio', 'PERSON')]
+
+Title: Extinction Rebellion stages Earth Day protest outside Tesla showroom
+Entities: [('Tesla', 'ORG')]
+
+Title: Israeli strike kills at least 23 as mediators seek lasting Gaza truce
+Entities: [('Israeli', 'NORP'), ('at least 23', 'CARDINAL'), ('Gaza', 'GPE')]
+
+Title: Indian authorities hunt Kashmir shooters as Modi cuts Saudi trip short
+Entities: [('Indian', 'NORP'), ('Kashmir', 'LOC'), ('Saudi', 'NORP')]
+
+Title: Trump and Zelenskyy among world leaders planning to attend Pope Francis' funeral
+Entities: [('Trump', 'ORG'), ('Zelenskyy', 'PERSON'), ('Francis', 'PERSON')]
+
+Title: US judge slams Trump administration for 'bad faith' in deportation case
+Entities: [('US', 'GPE'), ('Trump', 'PERSON')]
+
+Title: Istanbul shaken by magnitude 6.2 earthquake, more than 150 people injured
+Entities: [('Istanbul', 'GPE'), ('6.2', 'CARDINAL'), ('more than 150', 'CARDINAL')]
+
+Title: Russian drone attacks kill nine in Ukraine's Dnipropetrovsk region
+Entities: [('Russian', 'NORP'), ('nine', 'CARDINAL'), ('Ukraine', 'GPE'), ('Dnipropetrovsk', 'GPE')]
+
+Title: Federal judge blocks Trump administration from dismantling Voice of America
+Entities: [('Trump', 'ORG'), ('Voice of America', 'ORG')]
+
+Title: Venezuelan families rally against El Salvador’s migrant-prisoner swap proposal
+Entities: [('Venezuelan', 'NORP'), ('El', 'GPE')]
+
+Title: Tens of thousands gather as Pope Francis lies in state at St Peter's Basilica
+Entities: [('Tens of thousands', 'CARDINAL'), ('Francis', 'PERSON'), ("St Peter's", 'GPE')]
+
+Title: Markets rebound as Trump signals cutting China tariffs 'substantially'
+Entities: [('Trump', 'ORG'), ('China', 'GPE')]
+
+Title: Latest news bulletin | April 23rd – Morning
+Entities: [('April 23rd', 'DATE'), ('Morning', 'TIME')]
+
+Title: Critical raw materials set to be a key lever in global trade war
+Entities: []
+
+Title: Death of Pope Francis: The pontiff and Emmanuel Macron, a complex relationship
+Entities: [('Francis', 'PERSON'), ('Emmanuel Macron', 'PERSON')]
+
+Title: At least 20 tourists killed as gunmen open fire in India-controlled Kashmir, police say
+Entities: [('At least 20', 'CARDINAL'), ('India', 'GPE'), ('Kashmir', 'LOC')]
+
+Title: Vance and Modi hail positive US-India trade talks amid Trump tariff threat
+Entities: [('Vance', 'PERSON'), ('US', 'GPE'), ('India', 'GPE')]
+
+Title: Latest news bulletin | April 22nd – Evening
+Entities: [('April 22nd', 'DATE')]
+
+Title: Search underway after suspected shark attack on Israeli coast
+Entities: [('Israeli', 'NORP')]
+
+Title: Detained US university student misses son's birth after release plea rejected
+Entities: [('US', 'GPE')]
+
+Title: Christian Palestinians mourn Pope Francis, an outspoken voice for peace in Gaza
+Entities: [('Christian', 'NORP'), ('Palestinians', 'NORP'), ('Francis', 'PERSON'), ('Gaza', 'GPE')]
+
+Title: Argentines pay tribute to Pope Francis in his hometown of Buenos Aires
+Entities: [('Argentines', 'NORP'), ('Francis', 'PERSON'), ('Buenos Aires', 'GPE')]
+
+Title: Mourners await the Pope's funeral and future of the Catholic Church
+Entities: [('the Catholic Church', 'ORG')]
+
+Title: Watch: Hundreds of firefighters battle raging fire near Prague
+Entities: [('Hundreds', 'CARDINAL'), ('Prague', 'GPE')]
+
+Title: Israeli strikes on Gaza kill at least 14 and destroy bulldozers need to clear rubble
+Entities: [('Israeli', 'NORP'), ('Gaza', 'GPE'), ('at least 14', 'CARDINAL')]
+
+Title: Australians begin to cast ballots in early voting ahead of 3 May general elections
+Entities: [('Australians', 'NORP'), ('3', 'CARDINAL')]
+
+Title: Russia's Easter truce in Ukraine was a 'charm offensive' for Trump, France says
+Entities: [('Russia', 'GPE'), ('Easter', 'EVENT'), ('Ukraine', 'GPE'), ('Trump', 'ORG'), ('France', 'GPE')]
+
+Title: Apostolic Palace sealed after Pope Francis' death
+Entities: [('Apostolic Palace', 'ORG'), ('Francis', 'PERSON')]
+
+Title: First images of Pope Francis released following his death
+Entities: [('First', 'ORDINAL'), ('Francis', 'PERSON')]
+
+Title: Latest news bulletin | April 22nd – Midday
+Entities: [('April 22nd', 'DATE'), ('Midday', 'WORK_OF_ART')]
+
+Title: Who is Kevin Farrell, the cardinal running the Vatican until the next pope is chosen?
+Entities: [('Kevin Farrell', 'PERSON'), ('Vatican', 'FAC')]
+
+Title: Sudan's RSF kill more than 30 people in latest attack in Darfur, activists say
+Entities: [('Sudan', 'GPE'), ('RSF', 'ORG'), ('more than 30', 'CARDINAL'), ('Darfur', 'GPE')]
+
+Title: Hegseth lashes out at media amidst 'full blown meltdown' at the Pentagon claims
+Entities: [('Hegseth', 'PERSON'), ('Pentagon', 'ORG')]
+
+Title: DCT Abu Dhabi chairman on expanding the country's art collection to boost global cultural influence
+Entities: [('DCT Abu Dhabi', 'ORG')]
+
+Title: Israeli airstrike hits tents sheltering displaced Gazans
+Entities: [('Israeli', 'NORP'), ('Gazans', 'NORP')]
+
+Title: Argentina bids farewell to Pope Francis, the first Latin American pontiff
+Entities: [('Argentina', 'GPE'), ('Francis', 'PERSON'), ('first', 'ORDINAL'), ('Latin American', 'NORP')]
+
+Title: Latest news bulletin | April 22nd – Morning
+Entities: [('April 22nd', 'DATE'), ('Morning', 'TIME')]
+
+Title: Investors flee US assets as Trump attacks Fed’s Powell and calls for rate cuts
+Entities: [('US', 'GPE'), ('Trump', 'ORG'), ('Fed�', 'PERSON'), ('Powell', 'PERSON')]
+
+Title: Pope Francis: Latin Americans mourn the first ever Argentinian elected as pontiff
+Entities: [('Francis', 'PERSON'), ('Latin Americans', 'NORP'), ('first', 'ORDINAL'), ('Argentinian', 'NORP')]
+
+Title: Harvard University sues Trump administration to halt freeze of federal grants
+Entities: [('Harvard University', 'ORG'), ('Trump', 'ORG')]
+
+Title: Rosary prayer for late Pope Francis led by Cardinal Mauro Gambetti in St Peter’s Square
+Entities: [('Francis', 'PERSON'), ('Mauro Gambetti', 'PERSON')]
+
+Title: Canadians Grapple with the Wide Impacts of U.S. Tariffs
+Entities: [('Canadians', 'NORP'), ('U.S.', 'GPE')]
+
+Title: After Kashmir attack, India downgrades ties with Pakistan and suspends water treaty
+Entities: [('Kashmir', 'LOC'), ('India', 'GPE'), ('Pakistan', 'GPE')]
+
+Title: Who are the cardinals selecting the next pope?
+Entities: []
+
+Title: The European Union hits Apple and Meta with 700 million euros in fines
+Entities: [('The European Union', 'ORG'), ('Apple', 'ORG'), ('Meta', 'ORG'), ('700 million euros', 'MONEY')]
+
+Title: Officials from U.S., Europe meet in London for Ukraine peace talks
+Entities: [('U.S.', 'GPE'), ('Europe', 'LOC'), ('London', 'GPE'), ('Ukraine', 'GPE')]
+
+Title: IMF warns of economic impacts of Trump's tariffs. And, Pope Francis lies in state
+Entities: [('IMF', 'ORG'), ('Trump', 'ORG'), ('Francis', 'PERSON')]
+
+Title: Trump was once seen as an asset to right-wing populists abroad. No more
+Entities: [('Trump', 'ORG')]
+
+Title: Morning news brief
+Entities: []
+
+Title: Pope Francis' body lies in state ahead of Saturday funeral
+Entities: [('Francis', 'PERSON'), ('Saturday', 'DATE')]
+
+Title: Kashmir experiences worst civilian attack in years, coinciding with Vance India visit
+Entities: [('Kashmir', 'LOC'), ('years', 'DATE'), ('Vance India', 'PERSON')]
+
+Title: Inside the basilica where the Pope's casket can be viewed by the public - and phones are a constant sight
+Entities: []
+
+Title: Israeli troops shot at Gaza aid workers from 'point-blank range'
+Entities: [('Israeli', 'NORP'), ('Gaza', 'GPE')]
+
+Title: Istanbul hit by 6.2 magnitude earthquake - more than 150 people injured
+Entities: [('Istanbul', 'GPE'), ('6.2', 'CARDINAL'), ('more than 150', 'CARDINAL')]
+
+Title: Women in Iran increasingly deciding not to wear headscarves in public
+Entities: [('Iran', 'GPE')]
+
+Title: China's Silicon Valley is ready to make its mark on the world
+Entities: [('China', 'GPE'), ('Silicon Valley', 'LOC')]
+
+Title: Depth of Trump's frustration revealed in comments on Zelenskyy - and there was one notable absence in his Truth Social post
+Entities: [('Trump', 'ORG'), ('Zelenskyy', 'PERSON'), ('Truth Social post', 'WORK_OF_ART')]
+
+Title: Apple and Meta fined millions by EU over competition law
+Entities: [('Apple', 'ORG'), ('Meta', 'ORG'), ('millions', 'CARDINAL'), ('EU', 'ORG')]
+
+Title: Top diplomats pull out of Ukraine peace talks in London as Kyiv rejects US plan to recognise Crimea as Russian
+Entities: [('Ukraine', 'GPE'), ('London', 'GPE'), ('Kyiv', 'GPE'), ('US', 'GPE'), ('Crimea', 'GPE'), ('Russian', 'NORP')]
+
+Title: Trump tells Zelenskyy to 'get it done' as peace talks on Ukraine war downgraded
+Entities: [('Trump', 'PERSON'), ('Zelenskyy', 'PERSON'), ('Ukraine', 'GPE')]
+
+Title: Stock markets rally as Trump rows back on Fed and China threats
+Entities: [('Trump', 'ORG'), ('Fed', 'ORG'), ('China', 'GPE')]
+
+Title: In the Central African Republic, the Hired Guns Wear Out Their Welcome
+Entities: [('the Central African Republic', 'LOC')]
+
+Title: Wanted: a Home – Spain Is Becoming a Victim of Its Own Success
+Entities: [('Spain', 'GPE')]
+
+Title: The Long Arm of the Law: In the Philippines, the Rules Remain an Afterthought
+Entities: [('The Long Arm of the Law: In', 'ORG'), ('Philippines', 'GPE')]
+
+Title: The Chainsaw Massacre: Hailed and Reviled for His Deep Cuts, Argentina’s Leader Faces the Axe
+Entities: [('The Chainsaw Massacre', 'ORG'), ('Deep Cuts', 'PERSON'), ('Faces the Axe', 'PERSON')]
+
+Title: A Perfect Storm: A New Civil War in South Sudan Threatens Entire Region
+Entities: []
+
+Title: Going a Courting: China Woos Neighbors to Beat US Trade War
+Entities: []
+
+Title: The Threat From Within: Some Gazans Say They Have Had Enough
+Entities: [('Gazans', 'NORP')]
+
+Title: The Fire and the Fury: North Macedonia Mourns – and Rages – After a Devastating Blaze
+Entities: []
+
+Title: The Emperor’s New Clothes: Coup Leader Ahead in Gabon’s Elections
+Entities: [('Gabon�', 'NORP')]
+
+Title: When the Sky Falls: Lesotho Says US Tariffs Will ‘Kill’ the Country
+Entities: [('the Sky Falls', 'PERSON'), ('Lesotho', 'GPE'), ('US', 'GPE')]
+
+Title: Who Is Set to Attend Pope Francis’ Funeral? From Trump to Prince William, Here Are the Key Figures So Far
+Entities: [('Prince William', 'PERSON')]
+
+Title: Who Chooses the Next Pope—and Who Chose Them?
+Entities: [('the Next Pope—and', 'ORG')]
+
+Title: Who Leads the Catholic Church Between Popes?
+Entities: [('the Catholic Church', 'ORG')]
+
+Title: The Powerful Legacy of the First Latin American Pope
+Entities: [('The Powerful Legacy of the First', 'ORG'), ('Latin American', 'NORP')]
+
+Title: Pope Francis Taught the World a Lesson About Capitalism
+Entities: [('Francis', 'PERSON')]
+
+Title: The Enduring Connection Between Pope Francis and a Parish in Gaza
+Entities: [('The Enduring Connection Between', 'LAW'), ('Francis', 'PERSON'), ('Parish', 'ORG'), ('Gaza', 'GPE')]
+
+Title: Biden Shared Grief With Pope Francis. Trump Harbored Grievances Toward Him
+Entities: [('Biden Shared', 'PERSON'), ('Francis', 'PERSON')]
+
+Title: How a New Pope Is Chosen—and Who It Could Be
+Entities: []
+
+Title: Global Leaders Offer Tributes to Pope Francis
+Entities: [('Francis', 'PERSON')]
+
+Title: Meme-ing the Faith: Pope Francis’ Most Memorable Social Media Moments
+Entities: []
+
+Title: Dodgers All-Star Reveals New Injury After Unexpectedly Being Out of Lineup
+Entities: []
+
+Title: Supreme Court Clears the Way for State to Change Its Constitution
+Entities: [('Supreme Court', 'ORG')]
+
+Title: Friend Kicking Guests Out 11 Hours Before Their Flight Sparks Viral Debate
+Entities: [('11 Hours', 'TIME')]
+
+Title: I Have a Child With Severe Autism. RFK Jr. Gets One Thing Right About It | Opinion
+Entities: [('One', 'CARDINAL')]
+
+Title: Netflix's iHostage Movie was Based on a True Story—Here's What Really Happened
+Entities: [('Netflix', 'ORG'), ('iHostage Movie', 'ORG'), ("Based on a True Story—Here's What Really Happened", 'WORK_OF_ART')]
+
+Title: Nuggets HC Provides Massive Injury Update on Michael Porter Jr Ahead of Game 2
+Entities: [('Nuggets HC', 'ORG'), ('Michael Porter Jr Ahead', 'PERSON'), ('Game 2', 'LAW')]
+
+Title: Best Magic vs. Celtics Player Props, ATS Bets: C's Heavy Game 2 Favorites
+Entities: [('Best Magic', 'WORK_OF_ART'), ('Celtics Player Props', 'ORG'), ("C's Heavy Game 2 Favorites", 'ORG')]
+
+Title: John Cena Blames WWE Fans For Major Surgery
+Entities: [('John Cena', 'PERSON'), ('Surgery', 'PERSON')]
+
+Title: DOJ Steps In as Illegal Migrant Who Killed Teen Couple Set for Early Release
+Entities: [('DOJ', 'ORG')]
+
+Title: Protester Speaks Out After Trump Tower Demonstration Ends in Arrest
+Entities: [('Trump Tower Demonstration Ends', 'FAC'), ('Arrest', 'PERSON')]
+
+Title: Joe Hendry Reveals When He Found Out About WWE WrestleMania Debut
+Entities: [('Joe Hendry', 'PERSON'), ('WWE', 'ORG')]
+
+Title: Spencer Strider Injury Could Lead To Massive Braves-Marlins Trade
+Entities: [('Spencer Strider', 'PERSON')]
+
+Title: Donald Trump's New Order is His 'Secret Weapon' to Reshape Higher Education
+Entities: [("Donald Trump's", 'PERSON'), ('New Order', 'WORK_OF_ART'), ('Reshape Higher Education', 'ORG')]
+
+Title: Why Is the Air Quality Bad on Wednesday? Worst Areas in US
+Entities: [('Wednesday', 'DATE'), ('US', 'GPE')]
+
+Title: Bet365 Bonus Code WEEK365: Get $150 Bonus for Any NBA Playoffs Game Tonight
+Entities: [('$150', 'MONEY'), ('Tonight', 'TIME')]
+
+Title: Chicago Cubs Make Flurry of Roster Moves After Comeback Win Over Dodgers
+Entities: [('Chicago', 'GPE')]
+
+Title: Half of Americans Think Kilmar Abrego Garcia Should Return to US: Poll
+Entities: [('Half', 'CARDINAL'), ('Americans', 'NORP'), ('Kilmar Abrego', 'PERSON'), ('Garcia Should', 'PERSON'), ('US', 'GPE')]
+
+Title: Medicaid Coverage Could Change for Thousands of Women
+Entities: [('Medicaid', 'ORG'), ('Thousands', 'CARDINAL')]
+
+Title: Warriors Make Final Decision on Steph Curry Availability For Game 2 vs Rockets
+Entities: [('Steph Curry Availability For Game 2 vs Rockets', 'PERSON')]
+
+Title: Three Potential Landing Spots for Recently Released Guardians Pitcher
+Entities: [('Three', 'CARDINAL')]
+
+Title: You might be breathing polluted air right now — nearly half of Americans are
+Entities: [('�', 'PERSON'), ('nearly half', 'CARDINAL'), ('Americans', 'NORP')]
+
+Title: Ukraine-Russia war latest: Trump lashes out at ‘boasting’ Zelensky after claiming US peace deal is close
+Entities: [('Ukraine', 'GPE'), ('Russia', 'GPE'), ('Trump', 'PERSON'), ('Zelensky', 'PERSON'), ('US', 'GPE')]
+
+Title: Florida man arrested for ‘tackling an 11-year-old girl who was constantly egging his house’
+Entities: [('Florida', 'GPE'), ('11-year-old', 'DATE')]
+
+Title: Elon Musk and Scott Bessent had a ‘very loud’ shouting match in the West Wing: ‘two billionaire, middle-aged men thinking it was WWE’
+Entities: [('Elon Musk', 'PERSON'), ('Scott Bessent', 'PERSON'), ('‘two', 'CARDINAL')]
+
+Title: It took 16 years to arrest a murder suspect. His case was dismissed on the day of his trial due to ‘staffing issues’
+Entities: [('16 years', 'DATE'), ('the day', 'DATE')]
+
+Title: False information is spreading about measles vaccine as more admit hearing fake claims it’s linked to autism
+Entities: []
+
+Title: The real truth behind Trump’s latest attack on Zelensky over potential US peace deal
+Entities: [('Trump�', 'GPE'), ('Zelensky', 'PERSON'), ('US', 'GPE')]
+
+Title: Harvey Weinstein trial live: Mogul’s attorneys blame the accusers and says they ‘tried to cut the line’ for roles
+Entities: [('Harvey Weinstein', 'PERSON')]
+
+Title: American Airlines flight attendants let passenger die while others disembarked, family says
+Entities: [('American Airlines', 'ORG')]
+
+Title: Mom storms onto Las Vegas campus and threatens to kill teacher who called her daughter ‘slow’
+Entities: [('Las Vegas', 'GPE')]
+
+Title: Trump slates Ukraine for not ceding land to Putin as he warns Zelensky to accept peace deal
+Entities: [('Trump', 'ORG'), ('Ukraine', 'GPE'), ('Putin', 'PERSON'), ('Zelensky', 'PERSON')]
+
+Title: Hegseth spent ‘several thousand dollars’ turning Pentagon room into a make-up studio for his TV spots, report says
+Entities: [('Hegseth', 'PERSON'), ('thousand', 'CARDINAL'), ('Pentagon', 'ORG')]
+
+Title: Trump wants to slash suicide lifeline for LGBT+ kids – despite it being the second biggest cause of death for American youth
+Entities: [('Trump', 'ORG'), ('second', 'ORDINAL'), ('American', 'NORP')]
+
+Title: New Jersey faces biggest wildfire in 20 years as more than 11,000 acres burn. Here’s what we know
+Entities: [('New Jersey', 'GPE'), ('20 years', 'DATE'), ('more than 11,000 acres', 'QUANTITY')]
+
+Title: Extinction Rebellion protester defaces Trump Tower presidential plaque with bright green paint
+Entities: [('Trump Tower', 'PERSON')]
+
+Title: Pope Francis latest: Tens of thousands of mourners view Pontiff’s open casket at St Peter’s Basilica
+Entities: [('Francis', 'PERSON'), ('Tens of thousands', 'CARDINAL'), ('St Peter’s', 'FAC')]
+
+Title: The eyewitness to the ‘Zizians’ murder was murdered weeks before the trial started. Now the only other witness is dying and has lost his memory
+Entities: [('weeks', 'DATE')]
+
+Title: Almost $5 billion was scammed from the elderly last year
+Entities: [('Almost $5 billion', 'MONEY'), ('last year', 'DATE')]
+
+Title: Trump and DOGE’s cuts to Social Security Administration spark fears that benefit payments will be ‘interrupted’ soon
+Entities: [('Trump', 'ORG'), ('Social Security Administration', 'ORG')]
+
+Title: Iran agrees to allow in a team to discuss restoring nuclear monitoring, a UN watchdog says
+Entities: [('Iran', 'GPE'), ('UN', 'ORG')]
+
+Title: FSU students who endured Parkland shooting urge Florida lawmakers to defend gun control law
+Entities: [('FSU', 'ORG'), ('Parkland', 'ORG'), ('Florida', 'GPE')]
+
+Title: Here’s the data the NIH can collect from your medical history for its ‘autism database’
+Entities: [('NIH', 'ORG')]
+
+Title: Wife of wrongly deported Maryland man Kilmar Abrego Garcia forced into safe house after government posts address online
+Entities: [('Maryland', 'GPE'), ('Kilmar Abrego Garcia', 'PERSON')]
+
+Title: Trump admits China’s tariffs will drop ‘but it won’t be zero’
+Entities: [('Trump', 'ORG'), ('zero�', 'CARDINAL')]
+
+Title: Cops find suspect holding bible after mom ‘beaten to death during exorcism’
+Entities: []
+
+Title: How Laura Loomer and other far-right users saw their X engagements plummet as soon as they criticized Musk
+Entities: [('Laura Loomer', 'PERSON')]
+
+Title: Israel deletes Pope Francis condolence tweet within hours of posting
+Entities: [('Israel', 'GPE'), ('Francis', 'PERSON'), ('hours', 'TIME')]
+
+Title: Mom brought Jell-O shots to elementary school Christmas party and passed them out to the kids, cops say
+Entities: [('Jell', 'ORG')]
+
+Title: A Princeton student vanished after leaving the library Saturday. Could a lake hold the key clue in his disappearance?
+Entities: [('Princeton', 'ORG'), ('Saturday', 'DATE')]
+
+Title: Treasury Secretary Scott Bessent says China has ‘opportunity for a big deal’ with US as trade war appears to cool
+Entities: [('Treasury', 'ORG'), ('Scott Bessent', 'PERSON'), ('China', 'GPE'), ('US', 'GPE')]
+
+Title: Trump has signed 124 orders in less than 100 days. Scholars warn this is a constitutional crisis
+Entities: [('Trump', 'ORG'), ('124', 'CARDINAL'), ('less than 100 days', 'DATE')]
+
+Title: ‘He does this for a living’: Career thief took Kristi Noem’s $4,400 Gucci bag, says crime expert
+Entities: [('‘He', 'ORG'), ('Kristi', 'PERSON'), ('4,400', 'MONEY'), ('Gucci', 'PRODUCT')]
+
+Title: JD Vance’s bluster over peace in Ukraine shows why Zelensky swerved an American ambush in London
+Entities: [('JD Vance’s', 'ORG'), ('Ukraine', 'GPE'), ('Zelensky', 'PERSON'), ('American', 'NORP'), ('London', 'GPE')]
+
+Title: Ants are at the centre of a new crime ring threatening Europe: ‘It’s like cocaine’
+Entities: [('Europe', 'LOC')]
+
+Title: Sarah Sanders begs her old boss Trump to reconsider after president rejects Arkansas’ request for disaster relief funds
+Entities: [('Sarah Sanders', 'PERSON'), ('Trump', 'PERSON')]
+
+Title: Putin says AI will give Russia huge advantage in warning to the West
+Entities: [('Putin', 'PERSON'), ('AI', 'ORG'), ('Russia', 'GPE')]
+
+Title: Trump has mentioned Biden on average six times every day of his presidency as obsession with old foe continues
+Entities: [('Trump', 'ORG'), ('Biden', 'PERSON'), ('six', 'CARDINAL')]
+
+Title: How Putin’s capture of Ukrainian nuclear power station puts whole world at risk
+Entities: [('Ukrainian', 'NORP')]
+
+Title: Watch live: Rachel Reeves gives major speech on UK economy at International Monetary Fund in Washington DC
+Entities: [('Rachel Reeves', 'PERSON'), ('UK', 'GPE'), ('International Monetary Fund', 'ORG'), ('Washington DC', 'GPE')]
+
+Title: Judge blasts Trump administration for refusing to answer questions about MS-13 in Kilmar Abrego Garcia case
+Entities: [('Trump', 'ORG'), ('MS-13', 'PRODUCT'), ('Kilmar Abrego Garcia', 'PERSON')]
+
+Title: Father of four’s remains found after shark attack off Israel beach
+Entities: [('Israel', 'GPE')]
+
+Title: The dignitaries, politicians and royalty attending Pope Francis’ funeral
+Entities: []
+
+Title: Trump live updates: Just 37% of Americans approve of president’s handling of economy, poll shows
+Entities: [('Just 37%', 'PERCENT'), ('Americans', 'NORP')]
+
+Title: Watch live: Pope Francis’ coffin lies in St Peter’s Basilica for public viewing
+Entities: [('St Peter’s', 'LOC')]
+
+Title: The Latest: Treasury secretary says trade war with China is not ‘sustainable’
+Entities: [('Treasury', 'ORG'), ('China', 'GPE')]
+
+Title: Pete Hegseth has surrounded himself with people who ‘don’t have his interests at heart’ as Pentagon infighting escalates
+Entities: [('Pete Hegseth', 'PERSON'), ('Pentagon', 'ORG')]
+
+Title: Harvey Weinstein: The #MeToo movement’s most notorious villain heads back to court for retrial
+Entities: [('Harvey Weinstein', 'PERSON')]
+
+Title: 6 ‘security guards’ charged after booting woman from Republican town hall – as she files $5m lawsuit
+Entities: [('6', 'CARDINAL'), ('Republican', 'NORP'), ('hall �', 'FAC'), ('5', 'MONEY')]
+
+Title: Texas Lottery executive resigns after investigation into recent winning tickets
+Entities: [('Texas Lottery', 'ORG')]
+
+Title: Rupert Murdoch’s newspaper again flames Donald Trump for historic economic bungle
+Entities: [('Rupert', 'PERSON'), ('Donald Trump', 'PERSON')]
+
+Title: ‘Call my mum please’: Moment news anchor feels Istanbul earthquake during live broadcast
+Entities: [('Istanbul', 'GPE')]
+
+Title: Strong earthquake hits Istanbul as buildings left shaking
+Entities: [('Istanbul', 'GPE')]
+
+Title: RFK Jr claims teenage boys in America have less testosterone than 68 year-old men in latest rant
+Entities: [('RFK Jr', 'PERSON'), ('America', 'GPE'), ('68 year-old', 'DATE')]
+
+Title: Man convicted of murdering woman whose daughter disappeared in mysterious circumstances
+Entities: []
+
+Title: Tens of thousands queue to view Pope lying in state at Vatican’s St Peter’s Basilica
+Entities: [('Tens of thousands', 'CARDINAL')]
+
+Title: Jimmy Kimmel tears into Hegseth’s new Signalgate scandal: ‘He’s getting hammered, but not the way he used to’
+Entities: [('Jimmy Kimmel', 'PERSON'), ('Hegseth’s', 'LAW'), ('Signalgate', 'ORG')]
+
+Title: Three teens killed as SUV collides with tractor-trailer in horror spring break crash
+Entities: [('Three', 'CARDINAL'), ('spring', 'DATE')]
+
+Title: How Francis used social media to craft his image as the ‘People’s Pope’
+Entities: [('Francis', 'PERSON'), ('the ‘People’s Pope�', 'ORG')]
+
+Title: FDA pauses milk quality tests amid Trump workforce cuts
+Entities: [('FDA', 'ORG'), ('Trump', 'ORG')]
+
+Title: More than 80% of world’s coral reefs hit by worst bleaching event in history
+Entities: [('More than 80%', 'PERCENT')]
+
+Title: Trump praises $5,000 ‘baby bonus’ for moms after they give birth: ‘It’s a good idea’
+Entities: [('Trump', 'ORG'), ('5,000', 'MONEY')]
+
+Title: Did Peanut need to die? New details emerge in social media squirrel drama
+Entities: []
+
+Title: Man attacked by shark off Israeli coast after bathers seen playing with animal
+Entities: [('Israeli', 'NORP')]
+
+Title: Trump hits thousands with surprise deportation notice email – including US citizens
+Entities: [('Trump', 'ORG'), ('thousands', 'CARDINAL'), ('US', 'GPE')]
+
+Title: When is Pope Francis’ funeral? Timeline and what to expect from Vatican ceremony
+Entities: [('Vatican', 'FAC')]
+
+Title: French President Macron brought new promises to cyclone-battered Mayotte. Residents want more
+Entities: [('French', 'NORP'), ('Macron', 'PERSON'), ('Mayotte', 'ORG')]
+
+Title: Earthquake with epicentre near proposed nuclear site rattles eastern Australia
+Entities: [('Australia', 'GPE')]
+
+Title: Who could be the next Pope? The cardinals who might succeed the head of the Catholic Church
+Entities: [('the Catholic Church', 'ORG')]
+
+Title: Raging 8,500-acre New Jersey wildfire forces evacuation of thousands
+Entities: [('8,500-acre', 'QUANTITY'), ('New Jersey', 'GPE'), ('thousands', 'CARDINAL')]
+
+Title: RFK Jr again claims autism is ‘worse’ than Covid, which he has emphasized killed ‘old people’
+Entities: [('RFK Jr', 'PERSON'), ('Covid', 'PERSON')]
+
+Title: Trump’s tariffs driving thousands of layoffs at US manufacturing plants
+Entities: [('thousands', 'CARDINAL'), ('US', 'GPE')]
+
