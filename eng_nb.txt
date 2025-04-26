@@ -1,0 +1,24 @@
+N - note, FFR - for future reference, NIP - note  on installed packages
+
+4/10
+- Starting project, anticipating only using news sources (RSS/Atom) for demo/initial collector.
+- N - Important to consider that news feeds must be polled, so considering making that an argument in collector initiatalization. Other option is to try and categorize specific news sources by their update frequency, so might introduce extra clutter/config files into codebase.
+- FFR - Need to create a versioning mechanism to distinguish recent pulls of feeds.
+- NIP - installed feedparser (pip install feedparser)
+- wrote misc/feed-pull-1.py to get familiar with feed pulling
+- N - one concern is that RSS is limited and recent. Great for the tasking model of live updates, but not conducive to retrieving archived information. Some archive options include GDELT and other news sources. Might consider a hybrid system with backfill, but would need to consider extent of that. Could possibly make it service-like, where historical events are not available unless a collector node is initialized with that capability (GDELT or some other source). Point of later concern.
+
+4/15
+- Narrowed down demo case to mixed feed with a lot of sources covering Ukraine/Russia and Taiwan/China. Used ChatGPT to generate 100 sources of global, US, and regional news plus NGO/government feeds. 
+- Reviewed that feed to ensure sources were all valid, ended up cutting to 68, going to write python script to extract most common tags to generalize for future sources. 
+-
+
+4/23
+For now, let us have one dispatcher node that is constantly listening to user messages. User messages will contain the type of the information they are interested in (e.g., global disasters, politics, economics). Depending on this type, user messages are expected to contain additional information. For instance, if they are interested in global disasters, users can specify the location of interest (in coordinates) and the radius, as well as the type of global disaster (e.g., earthquake, flood, etc.). 
+
+Depending on the type of information the user is interested in, the dispatcher node will then communicate with the collector node that is in charge of fetching information from, say, GDACS which provides information about natural disasters in real-time. 
+
+4/25 
+Implemented `gdacs_collector`. This collector receives a request from the dispatcher containing the coordinates (location) of interest and radius. Using this, an HTTP request is sent to GDACS and the relevant information is sent back to the dispatcher (for now). Later, of course, this information could be parsed better by another process or node (e.g., an NLP node) and then, such a final node would be responsible for sending that information to the client. 
+
+Implemented `dispatcher` for, mainly, testing purposes. However, the function `request_gdacs_collector` is definetely necessary. 
