@@ -1,10 +1,10 @@
-# WIDE-EYE
+# WIDE EYE
 
-## TIMELINE
-**Due Date:** April 30, 2025
-
-## gdacs-collector execution
- - Install Python. 
+## `gdacs_collector` execution
  - Create a Python virtual environment using `python3 -m venv venv`. 
  - Activate the virtual environment using `source /venv/bin/activate`. 
  - Install requirements using `pip install -r requirements.txt`. 
+ - Run using `python3 gdacs_collector.py`. 
+
+## `dispatcher` execution
+ - Run using `python3 dispatcher.py`. 
