@@ -1,0 +1,28 @@
+N - note, FFR - for future reference, NIP - note  on installed packages
+
+4/10
+- Starting project, anticipating only using news sources (RSS/Atom) for demo/initial collector.
+- N - Important to consider that news feeds must be polled, so considering making that an argument in collector initiatalization. Other option is to try and categorize specific news sources by their update frequency, so might introduce extra clutter/config files into codebase.
+- FFR - Need to create a versioning mechanism to distinguish recent pulls of feeds.
+- NIP - installed feedparser (pip install feedparser)
+- wrote misc/feed-pull-1.py to get familiar with feed pulling
+- N - one concern is that RSS is limited and recent. Great for the tasking model of live updates, but not conducive to retrieving archived information. Some archive options include GDELT and other news sources. Might consider a hybrid system with backfill, but would need to consider extent of that. Could possibly make it service-like, where historical events are not available unless a collector node is initialized with that capability (GDELT or some other source). Point of later concern.
+
+4/15
+- Narrowed down demo case to mixed feed with a lot of sources covering Ukraine/Russia and Taiwan/China. Used ChatGPT to generate 100 sources of global, US, and regional news plus NGO/government feeds. 
+- Reviewed that feed to ensure sources were all valid, ended up cutting to 68, going to write python script to pull entries as secondary validation (misc/feed-validator.py)
+
+4/16
+- Secondary validation yielded 54 test feeds, saved in test_feed_valid.csv. Pulling all entries from 54 sources yielded >30k lines of content, some more structured than others and offering more info in summaries
+- N - current plan is to place news in one section, almost like a search engine, but use as much summary/headline info as possible to do NER and geospatial correlation
+- FFR - Need to create system to rank sources based on relevance and info available from feed
+- N - to enrich data further, next step is to figure out how to work with GDACS, ReliefWeb, and ACLED for more structured disaster/conflict updates
+- FFR - Need to figure out how we are going to detail with distributing tasks to multiple feeders running the same source to get around API limits
+
+4/25
+- Recognized possible issue with the current approach: tying one source to each collector is inherently restrictive and assuming this is a volunteer model, would require a lot more awareness on the user side. Instead, we will compile an internal record of posisble sources and tag them based on key words/topics and regions. Based on the key words that the user enters and the location, sources will be assigned to each collector. This introduces the task of load balancing, but should improve usability overall
+- Used PySide6 to begin mocking up the GUI and am implementing gRPC.
+- NIP - pip install PySide6 folium geopy grpcio grpcio-tools
+- FFR - call inside root python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. proto/dispatcher.proto
+
+
