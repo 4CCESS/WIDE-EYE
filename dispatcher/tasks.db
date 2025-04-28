@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS tasks (
+  task_id      TEXT PRIMARY KEY,
+  token        TEXT    NOT NULL,
+  keywords     TEXT    NOT NULL,
+  categories   TEXT    NOT NULL,  -- JSON list
+  locations    TEXT    NOT NULL,  -- JSON list
+  start_time   TEXT    NOT NULL,  -- ISO 8601 UTC
+  end_time     TEXT    NOT NULL,  -- ISO 8601 UTC
+  status       TEXT    NOT NULL,  -- PENDING, DISPATCHED, etc.
+  created_at   TEXT    NOT NULL,  -- record‐insertion ISO 8601 UTC
+  updated_at   TEXT    NOT NULL
+);

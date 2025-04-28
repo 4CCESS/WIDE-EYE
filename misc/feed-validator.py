@@ -1,7 +1,7 @@
 import csv
 import feedparser
 
-INPUT_FILE = 'feeds/test_feeds_valid.csv'
+INPUT_FILE = 'feeds/tagged_sources.csv'
 OUTPUT_FILE = 'validated_feeds.csv'
 VERBOSE_ENTRIES_FILE = 'full_text_entries.txt'
 TITLE_ENTRIES_FILE = 'title_entries.txt'
@@ -70,10 +70,11 @@ def main():
     data_rows = rows[1:]
 
     results = []
-    for region, name, url in data_rows:
+    for region, tags, name, url in data_rows:
         result = validate_feed(url)
         results.append({
             'Region': region,
+            'Tags': tags,
             'Source': name,
             'URL': url,
             'Status': result['status'],
@@ -84,7 +85,7 @@ def main():
 
     with open(OUTPUT_FILE, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=[
-            'Region', 'Source', 'URL', 'Status', 'Feed Title', 'Entries', 'Error'
+            'Region', 'Tags', 'Source', 'URL', 'Status', 'Feed Title', 'Entries', 'Error'
         ])
         writer.writeheader()
         writer.writerows(results)

@@ -25,4 +25,8 @@ N - note, FFR - for future reference, NIP - note  on installed packages
 - NIP - pip install PySide6 folium geopy grpcio grpcio-tools
 - FFR - call inside root python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. proto/dispatcher.proto
 
+4/27
+- Working on dispatcher, goal of being done by EOD
+- Created a list of feeds with single tags
+- Decided to add a categories entry to tasking to help source match, and decided to also instantiate another RPC to send a list of available sources and locations that the user can pick from, reducing complexity of fuzzy matching user input
 

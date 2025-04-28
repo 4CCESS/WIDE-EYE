@@ -17,6 +17,11 @@ service ClientDispatcher {
 
   // Stream results for a given task
   rpc StreamResults (TaskResultsRequest) returns (stream TaskResult);
+
+  // Send available categories and locations
+  rpc ListAvailableCategories(ListCategoriesRequest) returns (ListCategoriesResponse);
+  rpc ListAvailableLocations(ListLocationsRequest) returns (ListLocationsResponse);
+
 }
 
 // --- Request / Response Messages ---
@@ -49,9 +54,10 @@ message LoginResponse {
 message TaskRequest {
   string                     token      = 1; // Auth token from Login
   string                     keywords   = 2;
-  string                     location   = 3;
-  google.protobuf.Timestamp  start_time = 4;
-  google.protobuf.Timestamp  end_time   = 5;
+  string                     categories = 3;
+  string                     location   = 4;
+  google.protobuf.Timestamp  start_time = 5;
+  google.protobuf.Timestamp  end_time   = 6;
 }
 
 message TaskStartResponse {
@@ -72,4 +78,18 @@ message TaskResult {
   string                     title     = 2;
   string                     url       = 3;
   google.protobuf.Timestamp  timestamp = 4;
+}
+
+// Available category/location update
+// Empty request (you can use google.protobuf.Empty if you want later)
+message ListCategoriesRequest {}
+
+message ListCategoriesResponse {
+    repeated string categories = 1;
+}
+
+message ListLocationsRequest {}
+
+message ListLocationsResponse {
+    repeated string locations = 1;
 }

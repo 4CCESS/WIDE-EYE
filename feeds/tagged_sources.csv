@@ -1,0 +1,23 @@
+Region,Tags,Name,URL
+International,general,Deutsche Welle – World,https://rss.dw.com/rdf/rss-en-all
+International,general,Reuters – World News,https://news.google.com/rss/search?q=site%3Areuters.com&hl=en-US&gl=US&ceid=US%3Aen
+International,general,The Independent – World News,https://www.independent.co.uk/news/world/rss
+International,general,The Guardian – World News,https://www.theguardian.com/world/rss
+International,general,BBC News – World,http://feeds.bbci.co.uk/news/world/rss.xml
+Ukraine/Russia,general,Unian (English),https://www.unian.info/rss
+Ukraine/Russia,general,TASS,https://tass.com/rss/v2.xml
+Ukraine/Russia,general,RT,https://www.rt.com/rss/news/
+Ukraine/Russia,general,The Moscow Times,https://www.themoscowtimes.com/rss/news
+Taiwan/China,general,Taipei Times,https://www.taipeitimes.com/xml/index.rss
+Taiwan/China,general,Sixth Tone,https://api.sixthtone.com/cont/output/rssApi
+Taiwan/China,general,South China Morning Post – China,https://www.scmp.com/rss/91/feed
+Taiwan/China,general,Financial Times – China,https://www.ft.com/world/asia-pacific/china?format=rss
+Texas,general,The Texas Tribune,https://feeds.texastribune.org/feeds/main/
+Texas,general,ABC13 Houston,https://abc13.com/feed/
+Texas,general,MySanAntonio,https://www.mysanantonio.com/default/feed/local-news-176.php
+Texas,general,WFAA,https://www.wfaa.com/feeds/syndication/rss/news
+None,cybersecurity,Hacker News,https://feeds.feedburner.com/TheHackersNews
+None,cybersecurity,Dark Reading,https://www.darkreading.com/rss.xml
+None,cybersecurity,HackRead,https://hackread.com/feed/
+None,emergency management,NYT FEMA,https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/organization/federal-emergency-management-agency/rss.xml
+Colorado,emergency management,Colorado Emergency Management Feed,http://feeds.feedburner.com/COEmergency

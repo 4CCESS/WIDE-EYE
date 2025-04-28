@@ -55,6 +55,16 @@ class ClientDispatcherStub(object):
                 request_serializer=proto_dot_dispatcher__pb2.TaskResultsRequest.SerializeToString,
                 response_deserializer=proto_dot_dispatcher__pb2.TaskResult.FromString,
                 _registered_method=True)
+        self.ListAvailableCategories = channel.unary_unary(
+                '/wide_eye.ClientDispatcher/ListAvailableCategories',
+                request_serializer=proto_dot_dispatcher__pb2.ListCategoriesRequest.SerializeToString,
+                response_deserializer=proto_dot_dispatcher__pb2.ListCategoriesResponse.FromString,
+                _registered_method=True)
+        self.ListAvailableLocations = channel.unary_unary(
+                '/wide_eye.ClientDispatcher/ListAvailableLocations',
+                request_serializer=proto_dot_dispatcher__pb2.ListLocationsRequest.SerializeToString,
+                response_deserializer=proto_dot_dispatcher__pb2.ListLocationsResponse.FromString,
+                _registered_method=True)
 
 
 class ClientDispatcherServicer(object):
@@ -89,6 +99,19 @@ class ClientDispatcherServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListAvailableCategories(self, request, context):
+        """Send available categories and locations
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAvailableLocations(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ClientDispatcherServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -111,6 +134,16 @@ def add_ClientDispatcherServicer_to_server(servicer, server):
                     servicer.StreamResults,
                     request_deserializer=proto_dot_dispatcher__pb2.TaskResultsRequest.FromString,
                     response_serializer=proto_dot_dispatcher__pb2.TaskResult.SerializeToString,
+            ),
+            'ListAvailableCategories': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAvailableCategories,
+                    request_deserializer=proto_dot_dispatcher__pb2.ListCategoriesRequest.FromString,
+                    response_serializer=proto_dot_dispatcher__pb2.ListCategoriesResponse.SerializeToString,
+            ),
+            'ListAvailableLocations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAvailableLocations,
+                    request_deserializer=proto_dot_dispatcher__pb2.ListLocationsRequest.FromString,
+                    response_serializer=proto_dot_dispatcher__pb2.ListLocationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -222,6 +255,60 @@ class ClientDispatcher(object):
             '/wide_eye.ClientDispatcher/StreamResults',
             proto_dot_dispatcher__pb2.TaskResultsRequest.SerializeToString,
             proto_dot_dispatcher__pb2.TaskResult.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListAvailableCategories(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/wide_eye.ClientDispatcher/ListAvailableCategories',
+            proto_dot_dispatcher__pb2.ListCategoriesRequest.SerializeToString,
+            proto_dot_dispatcher__pb2.ListCategoriesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListAvailableLocations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/wide_eye.ClientDispatcher/ListAvailableLocations',
+            proto_dot_dispatcher__pb2.ListLocationsRequest.SerializeToString,
+            proto_dot_dispatcher__pb2.ListLocationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

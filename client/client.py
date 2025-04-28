@@ -6,6 +6,9 @@
 import sys
 import io
 import threading
+import webbrowser
+import time
+
 
 from datetime import datetime
 
@@ -16,7 +19,7 @@ from PySide6.QtWidgets import (
     QSplitter, QStackedWidget, QMessageBox
 )
 from PySide6.QtWebEngineWidgets import QWebEngineView
-from PySide6.QtCore import Qt, QUrl
+from PySide6.QtCore import Qt, QUrl, QTimer, Signal, QPoint, QEvent
 
 # For map generation
 import folium
@@ -27,17 +30,22 @@ from proto.dispatcher_pb2_grpc import ClientDispatcherStub
 from proto.dispatcher_pb2 import (
     RegisterRequest, LoginRequest,
     TaskRequest, TaskResultsRequest,
+    ListCategoriesRequest, ListLocationsRequest
 )
 
 from google.protobuf.timestamp_pb2 import Timestamp
 
+from client.multi_select_search_box import MultiSelectSearchBox
 
 class MainWindow(QMainWindow):
+    result_received = Signal(object) #signal to handle result received from dispatcher
     """
     Main application window, stacked widget for auth and dashboard.
     """
     def __init__(self):
         super().__init__()
+
+        self.auth_token = "1234567890" #TODO: remove hardcoded token
 
         #1) Stacked widget for login and main window
         #Stack: 0 - Auth, 1 - Main
@@ -56,9 +64,20 @@ class MainWindow(QMainWindow):
         #creds = grpc.ssl_channel_credentials()
         #channel = grpc.secure_channel('localhost:50051', creds)
 
+        self.categories = []
+        self.locations = []
+
         #insecure implementation
         channel = grpc.insecure_channel('localhost:50051')
         self.dispatcher = ClientDispatcherStub(channel)
+
+
+        # Other necessary setup
+        self.result_received.connect(self.display_single_result)
+        self.refresh_categories_and_locations()
+        self.start_periodic_refresh()
+
+
 
     def _build_auth_page(self):
         auth = QWidget()
@@ -94,8 +113,10 @@ class MainWindow(QMainWindow):
 
         self.keywords_input = QLineEdit()
         self.keywords_input.setPlaceholderText("Keywords")
-        self.location_input = QLineEdit()
-        self.location_input.setPlaceholderText("Relevant Locations")
+        self.categories_input = MultiSelectSearchBox(placeholder="Categories")
+        #self.categories_input.setPlaceholderText("Categories")
+        self.location_input = MultiSelectSearchBox(placeholder="Locations")
+        #self.location_input.setPlaceholderText("Relevant Locations")
         self.stime_input = QDateTimeEdit()
         self.stime_input.setCalendarPopup(True)
         self.stime_input.setDateTimeRange(
@@ -116,7 +137,7 @@ class MainWindow(QMainWindow):
         self.active_tasks_btn = QPushButton("Active Tasks")
         self.active_tasks_btn.clicked.connect(self.on_show_active_tasks)
 
-        for widget in [self.keywords_input, self.location_input,
+        for widget in [self.keywords_input, self.categories_input, self.location_input,
                        self.stime_input, self.etime_input, self.add_task_btn,
                        self.active_tasks_btn]:
             top_l.addWidget(widget)
@@ -134,6 +155,7 @@ class MainWindow(QMainWindow):
 
         # Right: results list
         self.results_list = QListWidget()
+        self.results_list.itemDoubleClicked.connect(self.on_result_double_click)
         placeholder = QListWidgetItem("Results will appear here...")
         placeholder.setFlags(placeholder.flags() & ~Qt.ItemIsSelectable)
         self.results_list.addItem(placeholder)
@@ -152,6 +174,30 @@ class MainWindow(QMainWindow):
 
         # Add to stack as page 1
         self.stack.addWidget(dash)
+
+    def start_periodic_refresh(self):
+        def refresh_loop():
+            while True:
+                try:
+                    self.refresh_categories_and_locations()
+                except Exception as e:
+                    print(f"Error refreshing categories and locations: {e}")
+                time.sleep(300) # 5 minutes
+        threading.Thread(target=refresh_loop, daemon=True).start()
+    
+    def refresh_categories_and_locations(self):
+        """
+        Refresh available categories and locations from dispatcher.
+        """
+        cat_resp = self.dispatcher.ListAvailableCategories(ListCategoriesRequest())
+        loc_resp = self.dispatcher.ListAvailableLocations(ListLocationsRequest())
+        self.categories = list(cat_resp.categories)
+        self.locations = list(loc_resp.locations)
+        self.categories_input.set_items(self.categories)
+        self.location_input.set_items(self.locations)
+        print(f"Refreshed available categories: {self.categories}")
+        print(f"Refreshed available locations: {self.locations}")
+
 
     def on_register(self):
         req = RegisterRequest(
@@ -196,11 +242,12 @@ class MainWindow(QMainWindow):
         html = data.getvalue().decode()
         self.map_view.setHtml(html)
 
-    def to_ts(self, qdt):
+    def to_ts(self, qdt_edit):
         ts = Timestamp()
-        dt = qdt.toPython()
+        dt = qdt_edit.dateTime().toPython()  # <--- FIXED
         ts.FromDatetime(dt)
         return ts
+
 
     def on_add_task(self):
         """
@@ -210,13 +257,15 @@ class MainWindow(QMainWindow):
 
         token = self.auth_token
         keywords = self.keywords_input.text()
-        location = self.location_input.text()
+        categories = ",".join(self.categories_input.selected_items())
+        location = ",".join(self.location_input.selected_items())
         start_time = self.to_ts(self.stime_input)
         end_time = self.to_ts(self.etime_input)
 
         req = TaskRequest(
             token = token,
             keywords = keywords,
+            categories = categories,
             location = location,
             start_time = start_time,
             end_time = end_time
@@ -230,7 +279,7 @@ class MainWindow(QMainWindow):
             QMessageBox.warning(self, "Task Addition Failed", resp.message)
 
         # TODO: Construct and send gRPC TaskRequest
-        print(f"Sending task: {keywords}, {location}, from {start_time} to {end_time}")
+        print(f"Sending task: {keywords}, {categories}, {location}, from {start_time} to {end_time}")
 
     def on_show_active_tasks(self):
         """
@@ -247,23 +296,35 @@ class MainWindow(QMainWindow):
                 task_id=self.current_task_id
             )
             for result in self.dispatcher.StreamResults(req):
-                QApplication.instance().invokeMethod(
-                    self.display_single_result,
-                    Qt.QueuedConnection,
-                    result
-                )
+                print(f"Received result: {result}")
+                #self.display_single_result(result)
+                self.result_received.emit(result)
         threading.Thread(target=run_stream, daemon=True).start()
 
     def display_single_result(self, result):
+        # Remove placeholder if it exists
+        if self.results_list.count() == 1 and self.results_list.item(0).text() == "Results will appear here...":
+            self.results_list.takeItem(0)
+
+        # Add real result
         item = QListWidgetItem(result.title)
         item.setData(Qt.UserRole, result.url)
         self.results_list.addItem(item)
 
 
+    def on_result_double_click(self, item):
+        url = item.data(Qt.UserRole)
+        if url:
+            print(f"Opening URL: {url}")
+            webbrowser.open(url)
+
+
+
+
 
 def main():
     app = QApplication(sys.argv)
-
+    
     # Directly launch the main window without login for development
     mw = MainWindow()
     mw.show()
