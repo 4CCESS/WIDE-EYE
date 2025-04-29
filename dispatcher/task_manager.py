@@ -2,7 +2,7 @@
 
 import sqlite3
 import json
-from datetime import datetime
+import datetime
 from typing import List, Optional, Dict, Tuple, Any
 
 class TaskManager:
@@ -27,7 +27,7 @@ class TaskManager:
         self.conn.commit()
 
     def _now(self) -> str:
-        return datetime.now(datetime.UTC).isoformat()
+        return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
     def create_task(self,
                     task_id: str,

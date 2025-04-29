@@ -4,92 +4,189 @@ package wide_eye;
 
 import "google/protobuf/timestamp.proto";
 
-// Service for client ↔ dispatcher communication
+// -----------------------------------------------------------------------------
+// Client-facing service: handles user registration, authentication, task creation,
+// and result streaming between the client application and the dispatcher.
+// -----------------------------------------------------------------------------
 service ClientDispatcher {
-  // User registration
-  rpc Register (RegisterRequest) returns (RegisterResponse);
+  // Register a new user account
+  rpc Register (RegisterRequest)              returns (RegisterResponse);
 
-  // User login
-  rpc Login    (LoginRequest)    returns (LoginResponse);
+  // Authenticate an existing user
+  rpc Login    (LoginRequest)                 returns (LoginResponse);
 
-  // Start a new task
-  rpc StartTask (TaskRequest)    returns (TaskStartResponse);
+  // Submit a new OSINT collection task
+  rpc StartTask (TaskRequest)                 returns (TaskStartResponse);
 
-  // Stream results for a given task
-  rpc StreamResults (TaskResultsRequest) returns (stream TaskResult);
+  // Stream incremental results for a running task
+  rpc StreamResults (TaskResultsRequest)      returns (stream TaskResult);
 
-  // Send available categories and locations
+  // Retrieve the list of available categories for tasks
   rpc ListAvailableCategories(ListCategoriesRequest) returns (ListCategoriesResponse);
-  rpc ListAvailableLocations(ListLocationsRequest) returns (ListLocationsResponse);
 
+  // Retrieve the list of available locations for tasks
+  rpc ListAvailableLocations(ListLocationsRequest)   returns (ListLocationsResponse);
 }
 
-// --- Request / Response Messages ---
+// -----------------------------------------------------------------------------
+// Collector-facing service: manages collector registration, login, heartbeat,
+// task assignment streaming, and result submission.
+// -----------------------------------------------------------------------------
+service CollectorDispatcher {
+  // Register a new collector process with the dispatcher
+  rpc RegisterCollector (CollectorRegisterRequest)    returns (CollectorRegisterResponse);
 
-// Registration
+  // Authenticate a registered collector and obtain a session token
+  rpc LoginCollector    (CollectorLoginRequest)       returns (CollectorLoginResponse);
+
+  // Send periodic health check to dispatcher
+  rpc Heartbeat         (HeartbeatRequest)            returns (HeartbeatResponse);
+
+  // Receive a stream of task assignments from dispatcher
+  rpc StreamTasks       (TaskStreamRequest)           returns (stream TaskAssignment);
+
+  // Submit results from a completed task back to dispatcher
+  rpc SubmitTaskResult  (CollectorTaskResult)         returns (CollectorTaskResultAck);
+}
+
+// --- Client Request / Response Messages ---
+
+// Request to register a new user
 message RegisterRequest {
   string username = 1;
   string password = 2;
 }
 
+// Response after user registration attempt
 message RegisterResponse {
   bool   success = 1;
-  string message = 2;   // e.g., "Registration successful" or error text
-  string user_id = 3;   // Assigned user identifier
+  string message = 2; // e.g., "Registration successful" or error description
+  string user_id = 3; // Unique identifier assigned by dispatcher
 }
 
-// Login
+// Request to authenticate a user
 message LoginRequest {
   string username = 1;
   string password = 2;
 }
 
+// Response after login attempt
 message LoginResponse {
   bool   success = 1;
-  string message = 2;   // e.g., "Login successful" or error text
-  string token   = 3;   // Auth token for session
+  string message = 2; // e.g., "Login successful" or error description
+  string token   = 3; // JWT or session token for authenticated calls
 }
 
-// Task creation
+// Request to start a new task
 message TaskRequest {
-  string                     token      = 1; // Auth token from Login
-  string                     keywords   = 2;
-  string                     categories = 3;
-  string                     location   = 4;
-  google.protobuf.Timestamp  start_time = 5;
-  google.protobuf.Timestamp  end_time   = 6;
+  string                     token      = 1; // Auth token from LoginResponse
+  string                     keywords   = 2; // Search keywords or query string
+  string                     categories = 3; // Desired data categories
+  string                     location   = 4; // Geographic filter
+  google.protobuf.Timestamp  start_time = 5; // Task time window start
+  google.protobuf.Timestamp  end_time   = 6; // Task time window end
 }
 
+// Response after task creation
 message TaskStartResponse {
   bool   success = 1;
-  string message = 2;   // e.g., "Task started"
-  string task_id = 3;   // Unique ID assigned by dispatcher
+  string message = 2; // e.g., "Task started successfully"
+  string task_id = 3; // Unique task identifier
 }
 
-// Requesting a results stream
+// Request for streaming results of a running task
 message TaskResultsRequest {
-  string token   = 1;
-  string task_id = 2;
+  string token   = 1; // Auth token
+  string task_id = 2; // Identifier of the task to stream
 }
 
-// Individual streamed result
+// Individual result entry sent in the StreamResults RPC
 message TaskResult {
-  string                     task_id   = 1;
-  string                     title     = 2;
-  string                     url       = 3;
-  google.protobuf.Timestamp  timestamp = 4;
+  string                     task_id   = 1; // Related task identifier
+  string                     title     = 2; // Headline or result title
+  string                     url       = 3; // Source URL for the result
+  google.protobuf.Timestamp  timestamp = 4; // Publication time of result
 }
 
-// Available category/location update
-// Empty request (you can use google.protobuf.Empty if you want later)
+// Empty request messages for list retrieval (placeholders)
 message ListCategoriesRequest {}
-
-message ListCategoriesResponse {
-    repeated string categories = 1;
-}
-
 message ListLocationsRequest {}
 
+// Response containing available categories
+message ListCategoriesResponse {
+  repeated string categories = 1; // Available task categories
+}
+
+// Response containing available locations
 message ListLocationsResponse {
-    repeated string locations = 1;
+  repeated string locations = 1; // Available geographic locations
+}
+
+// --- Collector Request / Response Messages ---
+
+// Request to register a collector with dispatcher
+message CollectorRegisterRequest {
+  string name   = 1; // Unique collector instance name or ID
+  string secret = 2; // Pre-shared registration secret
+}
+
+// Response after collector registration attempt
+message CollectorRegisterResponse {
+  bool   success = 1;
+  string message = 2; // e.g., "Collector registered"
+}
+
+// Request for collector authentication
+message CollectorLoginRequest {
+  string name   = 1; // Registered collector name
+  string secret = 2; // Registration secret or password
+}
+
+// Response after collector login attempt
+message CollectorLoginResponse {
+  bool   success = 1;
+  string message = 2; // e.g., "Login successful"
+  string token   = 3; // Session token for collector
+}
+
+// Heartbeat message from collector to dispatcher
+message HeartbeatRequest {
+  string                    token     = 1; // Collector session token
+  google.protobuf.Timestamp timestamp = 2; // Time of heartbeat
+}
+
+// Acknowledgement of heartbeat reception
+message HeartbeatResponse {
+  bool   success = 1;
+  string message = 2; // e.g., "Heartbeat received"
+}
+
+// Request to begin receiving task assignments
+message TaskStreamRequest {
+  string        token      = 1; // Collector session token
+  repeated string categories = 2; // Optional: filter by category
+  repeated string locations  = 3; // Optional: filter by location
+}
+
+// Task assignment sent from dispatcher to collector
+message TaskAssignment {
+  string                     task_id    = 1; // Unique task identifier
+  string                     category   = 2; // Task category
+  string                     location   = 3; // Task location
+  google.protobuf.Timestamp  start_time = 4; // When to begin collection
+  string                     parameters = 5; // JSON-encoded task details
+}
+
+// Task result submitted by collector
+message CollectorTaskResult {
+  string                    token     = 1; // Collector session token
+  string                    task_id   = 2; // Related task identifier
+  google.protobuf.Timestamp timestamp = 3; // Time result was generated
+  string                    result    = 4; // JSON-encoded result payload
+}
+
+// Acknowledgement of submitted task result
+message CollectorTaskResultAck {
+  bool   success = 1;
+  string message = 2; // e.g., "Result received"
 }
