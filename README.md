@@ -219,6 +219,3 @@ Each component directory contains a `config.json`. Review and edit these values 
 
   * Task cancellation, progress indicators, map clustering.
   * Custom styling & theme for PySide6.
-
-Enjoy exploring the world through distributed OSINT!
-— Jesse & Ruben
