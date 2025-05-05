@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16proto/dispatcher.proto\x12\x08wide_eye\x1a\x1fgoogle/protobuf/timestamp.proto\"5\n\x0fRegisterRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"E\n\x10RegisterResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\"2\n\x0cLoginRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"@\n\rLoginResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05token\x18\x03 \x01(\t\"\xb2\x01\n\x0bTaskRequest\x12\r\n\x05token\x18\x01 \x01(\t\x12\x10\n\x08keywords\x18\x02 \x01(\t\x12\x12\n\ncategories\x18\x03 \x01(\t\x12\x10\n\x08location\x18\x04 \x01(\t\x12.\n\nstart_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"F\n\x11TaskStartResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07task_id\x18\x03 \x01(\t\"4\n\x12TaskResultsRequest\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0f\n\x07task_id\x18\x02 \x01(\t\"h\n\nTaskResult\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12-\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x17\n\x15ListCategoriesRequest\",\n\x16ListCategoriesResponse\x12\x12\n\ncategories\x18\x01 \x03(\t\"\x16\n\x14ListLocationsRequest\"*\n\x15ListLocationsResponse\x12\x11\n\tlocations\x18\x01 \x03(\t2\xd0\x03\n\x10\x43lientDispatcher\x12\x41\n\x08Register\x12\x19.wide_eye.RegisterRequest\x1a\x1a.wide_eye.RegisterResponse\x12\x38\n\x05Login\x12\x16.wide_eye.LoginRequest\x1a\x17.wide_eye.LoginResponse\x12?\n\tStartTask\x12\x15.wide_eye.TaskRequest\x1a\x1b.wide_eye.TaskStartResponse\x12\x45\n\rStreamResults\x12\x1c.wide_eye.TaskResultsRequest\x1a\x14.wide_eye.TaskResult0\x01\x12\\\n\x17ListAvailableCategories\x12\x1f.wide_eye.ListCategoriesRequest\x1a .wide_eye.ListCategoriesResponse\x12Y\n\x16ListAvailableLocations\x12\x1e.wide_eye.ListLocationsRequest\x1a\x1f.wide_eye.ListLocationsResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16proto/dispatcher.proto\x12\x08wide_eye\x1a\x1fgoogle/protobuf/timestamp.proto\"5\n\x0fRegisterRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"E\n\x10RegisterResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\"2\n\x0cLoginRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"@\n\rLoginResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05token\x18\x03 \x01(\t\"\xb2\x01\n\x0bTaskRequest\x12\r\n\x05token\x18\x01 \x01(\t\x12\x10\n\x08keywords\x18\x02 \x01(\t\x12\x12\n\ncategories\x18\x03 \x01(\t\x12\x10\n\x08location\x18\x04 \x01(\t\x12.\n\nstart_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"F\n\x11TaskStartResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07task_id\x18\x03 \x01(\t\"4\n\x12TaskResultsRequest\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0f\n\x07task_id\x18\x02 \x01(\t\"\\\n\nTaskResult\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0e\n\x06result\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x17\n\x15ListCategoriesRequest\"\x16\n\x14ListLocationsRequest\",\n\x16ListCategoriesResponse\x12\x12\n\ncategories\x18\x01 \x03(\t\"*\n\x15ListLocationsResponse\x12\x11\n\tlocations\x18\x01 \x03(\t\"8\n\x18\x43ollectorRegisterRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06secret\x18\x02 \x01(\t\"=\n\x19\x43ollectorRegisterResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"5\n\x15\x43ollectorLoginRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06secret\x18\x02 \x01(\t\"I\n\x16\x43ollectorLoginResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05token\x18\x03 \x01(\t\"P\n\x10HeartbeatRequest\x12\r\n\x05token\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"5\n\x11HeartbeatResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"I\n\x11TaskStreamRequest\x12\r\n\x05token\x18\x01 \x01(\t\x12\x12\n\ncategories\x18\x02 \x03(\t\x12\x11\n\tlocations\x18\x03 \x03(\t\"\xc6\x01\n\x0eTaskAssignment\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x10\n\x08keywords\x18\x02 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x03 \x01(\t\x12\x10\n\x08location\x18\x04 \x01(\t\x12.\n\nstart_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07sources\x18\x07 \x03(\t\"t\n\x13\x43ollectorTaskResult\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0f\n\x07task_id\x18\x02 \x01(\t\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06result\x18\x04 \x01(\t\":\n\x16\x43ollectorTaskResultAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\xd0\x03\n\x10\x43lientDispatcher\x12\x41\n\x08Register\x12\x19.wide_eye.RegisterRequest\x1a\x1a.wide_eye.RegisterResponse\x12\x38\n\x05Login\x12\x16.wide_eye.LoginRequest\x1a\x17.wide_eye.LoginResponse\x12?\n\tStartTask\x12\x15.wide_eye.TaskRequest\x1a\x1b.wide_eye.TaskStartResponse\x12\x45\n\rStreamResults\x12\x1c.wide_eye.TaskResultsRequest\x1a\x14.wide_eye.TaskResult0\x01\x12\\\n\x17ListAvailableCategories\x12\x1f.wide_eye.ListCategoriesRequest\x1a .wide_eye.ListCategoriesResponse\x12Y\n\x16ListAvailableLocations\x12\x1e.wide_eye.ListLocationsRequest\x1a\x1f.wide_eye.ListLocationsResponse2\xab\x03\n\x13\x43ollectorDispatcher\x12\\\n\x11RegisterCollector\x12\".wide_eye.CollectorRegisterRequest\x1a#.wide_eye.CollectorRegisterResponse\x12S\n\x0eLoginCollector\x12\x1f.wide_eye.CollectorLoginRequest\x1a .wide_eye.CollectorLoginResponse\x12\x44\n\tHeartbeat\x12\x1a.wide_eye.HeartbeatRequest\x1a\x1b.wide_eye.HeartbeatResponse\x12\x46\n\x0bStreamTasks\x12\x1b.wide_eye.TaskStreamRequest\x1a\x18.wide_eye.TaskAssignment0\x01\x12S\n\x10SubmitTaskResult\x12\x1d.wide_eye.CollectorTaskResult\x1a .wide_eye.CollectorTaskResultAckb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,15 +47,37 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TASKRESULTSREQUEST']._serialized_start=566
   _globals['_TASKRESULTSREQUEST']._serialized_end=618
   _globals['_TASKRESULT']._serialized_start=620
-  _globals['_TASKRESULT']._serialized_end=724
-  _globals['_LISTCATEGORIESREQUEST']._serialized_start=726
-  _globals['_LISTCATEGORIESREQUEST']._serialized_end=749
-  _globals['_LISTCATEGORIESRESPONSE']._serialized_start=751
-  _globals['_LISTCATEGORIESRESPONSE']._serialized_end=795
-  _globals['_LISTLOCATIONSREQUEST']._serialized_start=797
-  _globals['_LISTLOCATIONSREQUEST']._serialized_end=819
-  _globals['_LISTLOCATIONSRESPONSE']._serialized_start=821
-  _globals['_LISTLOCATIONSRESPONSE']._serialized_end=863
-  _globals['_CLIENTDISPATCHER']._serialized_start=866
-  _globals['_CLIENTDISPATCHER']._serialized_end=1330
+  _globals['_TASKRESULT']._serialized_end=712
+  _globals['_LISTCATEGORIESREQUEST']._serialized_start=714
+  _globals['_LISTCATEGORIESREQUEST']._serialized_end=737
+  _globals['_LISTLOCATIONSREQUEST']._serialized_start=739
+  _globals['_LISTLOCATIONSREQUEST']._serialized_end=761
+  _globals['_LISTCATEGORIESRESPONSE']._serialized_start=763
+  _globals['_LISTCATEGORIESRESPONSE']._serialized_end=807
+  _globals['_LISTLOCATIONSRESPONSE']._serialized_start=809
+  _globals['_LISTLOCATIONSRESPONSE']._serialized_end=851
+  _globals['_COLLECTORREGISTERREQUEST']._serialized_start=853
+  _globals['_COLLECTORREGISTERREQUEST']._serialized_end=909
+  _globals['_COLLECTORREGISTERRESPONSE']._serialized_start=911
+  _globals['_COLLECTORREGISTERRESPONSE']._serialized_end=972
+  _globals['_COLLECTORLOGINREQUEST']._serialized_start=974
+  _globals['_COLLECTORLOGINREQUEST']._serialized_end=1027
+  _globals['_COLLECTORLOGINRESPONSE']._serialized_start=1029
+  _globals['_COLLECTORLOGINRESPONSE']._serialized_end=1102
+  _globals['_HEARTBEATREQUEST']._serialized_start=1104
+  _globals['_HEARTBEATREQUEST']._serialized_end=1184
+  _globals['_HEARTBEATRESPONSE']._serialized_start=1186
+  _globals['_HEARTBEATRESPONSE']._serialized_end=1239
+  _globals['_TASKSTREAMREQUEST']._serialized_start=1241
+  _globals['_TASKSTREAMREQUEST']._serialized_end=1314
+  _globals['_TASKASSIGNMENT']._serialized_start=1317
+  _globals['_TASKASSIGNMENT']._serialized_end=1515
+  _globals['_COLLECTORTASKRESULT']._serialized_start=1517
+  _globals['_COLLECTORTASKRESULT']._serialized_end=1633
+  _globals['_COLLECTORTASKRESULTACK']._serialized_start=1635
+  _globals['_COLLECTORTASKRESULTACK']._serialized_end=1693
+  _globals['_CLIENTDISPATCHER']._serialized_start=1696
+  _globals['_CLIENTDISPATCHER']._serialized_end=2160
+  _globals['_COLLECTORDISPATCHER']._serialized_start=2163
+  _globals['_COLLECTORDISPATCHER']._serialized_end=2590
 # @@protoc_insertion_point(module_scope)

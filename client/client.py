@@ -1,337 +1,467 @@
 #!/usr/bin/env python3
-# globe_sense_client.py
-# Skeleton for GlobeSense OSINT client using PySide6 and folium map embedding
-# Modified: skip login for now to directly show main window
+"""
+WIDE EYE Client
+"""
 
 import sys
 import io
+import os
 import threading
 import webbrowser
 import time
+import json
+import logging
+from datetime import datetime as _dt, timezone
 
-
-from datetime import datetime
-
-# PySide6 imports
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QDateTimeEdit, QListWidget, QListWidgetItem,
-    QSplitter, QStackedWidget, QMessageBox
+    QLineEdit, QPushButton, QDateTimeEdit, QListWidget, QListWidgetItem,
+    QSplitter, QStackedWidget, QMessageBox, QDialog
 )
 from PySide6.QtWebEngineWidgets import QWebEngineView
-from PySide6.QtCore import Qt, QUrl, QTimer, Signal, QPoint, QEvent
+from PySide6.QtCore import Qt, Signal, QTimer
 
-# For map generation
 import folium
-
-# For gRPC
+import spacy
 import grpc
+
+from google.protobuf.timestamp_pb2 import Timestamp
 from proto.dispatcher_pb2_grpc import ClientDispatcherStub
 from proto.dispatcher_pb2 import (
     RegisterRequest, LoginRequest,
     TaskRequest, TaskResultsRequest,
     ListCategoriesRequest, ListLocationsRequest
 )
-
-from google.protobuf.timestamp_pb2 import Timestamp
-
 from client.multi_select_search_box import MultiSelectSearchBox
+from client.config import CLIENT_CONFIG
+
+# --- Logging Setup ---
+logger = logging.getLogger("WideEyeClient")
+logger.setLevel(logging.DEBUG)
+fh = logging.FileHandler(CLIENT_CONFIG["log_file"])
+fh.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+logger.addHandler(fh)
+
 
 class MainWindow(QMainWindow):
-    result_received = Signal(object) #signal to handle result received from dispatcher
     """
-    Main application window, stacked widget for auth and dashboard.
+    Main application window: handles auth, task submission,
+    streaming, and map-based result display.
     """
+    result_received = Signal(object)
+    marker_signal = Signal(dict)
+
     def __init__(self):
+        """
+        Initialize UI, load models, connect to dispatcher, and start refresh loops.
+        """
         super().__init__()
+        self.setWindowTitle("WIDE EYE")
 
-        self.auth_token = "1234567890" #TODO: remove hardcoded token
+        # State
+        self.auth_token = ""
+        self.active_tasks = {}     # task_id -> metadata
+        self.all_results = {}      # task_id -> [payloads]
+        self.current_task_filter = None
+        self.current_task_id = None
 
-        #1) Stacked widget for login and main window
-        #Stack: 0 - Auth, 1 - Main
+        # Load NLP model
+        logger.info("Loading spaCy model...")
+        self.nlp = spacy.load("en_core_web_sm")
+        logger.info(f"spaCy model loaded: {self.nlp.meta.get('name','unknown')}")
+
+        # Load coordinates lookup
+        logger.info("Loading location lookup...")
+        self.location_lookup = self._load_location_lookup()
+        logger.info(f"Loaded {len(self.location_lookup)} locations")
+
+        # Build UI
         self.stack = QStackedWidget()
-
-        #2) Build auth/dashboard pages
         self._build_auth_page()
         self._build_dashboard_page()
-
-        #3) Set stacked widget as central widget
         self.setCentralWidget(self.stack)
 
-        #4) Initialize gRPC channel and dispatcher stub
-        #TODO: move to config
-        #secure implementation
-        #creds = grpc.ssl_channel_credentials()
-        #channel = grpc.secure_channel('localhost:50051', creds)
-
-        self.categories = []
-        self.locations = []
-
-        #insecure implementation
-        channel = grpc.insecure_channel('localhost:50051')
+        # gRPC stub
+        addr = f"{CLIENT_CONFIG['dispatcher_address']}:{CLIENT_CONFIG['dispatcher_port']}"
+        logger.info(f"Connecting to dispatcher at {addr}")
+        channel = grpc.insecure_channel(addr)
         self.dispatcher = ClientDispatcherStub(channel)
 
+        # Initialize map
+        self._initialize_map()
 
-        # Other necessary setup
+        # Signals
         self.result_received.connect(self.display_single_result)
+        self.marker_signal.connect(self._add_marker_to_map)
+
+        # Load filters & start periodic refresh
         self.refresh_categories_and_locations()
         self.start_periodic_refresh()
 
-
+    def _load_location_lookup(self):
+        """
+        Load country/state/city coordinates from JSON for NER geotagging.
+        """
+        path = os.path.join(os.path.dirname(__file__), "countries+states+cities.json")
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception as e:
+            logger.error(f"Failed to load location JSON: {e}")
+            return {}
+        lookup = {}
+        for country in data:
+            for name, lat, lon in [
+                (country["name"], country.get("latitude"), country.get("longitude"))
+            ] + [
+                (s["name"], s.get("latitude"), s.get("longitude"))
+                for s in country.get("states", [])
+            ] + [
+                (c["name"], c.get("latitude"), c.get("longitude"))
+                for s in country.get("states", []) for c in s.get("cities", [])
+            ]:
+                if lat and lon:
+                    try:
+                        lookup[name.lower()] = (float(lat), float(lon))
+                    except:
+                        pass
+        return lookup
 
     def _build_auth_page(self):
+        """
+        Create the Register/Login UI.
+        """
         auth = QWidget()
         layout = QVBoxLayout()
-
-        # Username and password input
         self.user_in = QLineEdit()
         self.user_in.setPlaceholderText("Username")
         self.pass_in = QLineEdit()
-        self.pass_in.setEchoMode(QLineEdit.Password)
         self.pass_in.setPlaceholderText("Password")
-
-        # Buttons
-        reg_btn   = QPushButton("Register")
-        login_btn = QPushButton("Login")
+        self.pass_in.setEchoMode(QLineEdit.Password)
+        reg_btn = QPushButton("Register")
         reg_btn.clicked.connect(self.on_register)
+        login_btn = QPushButton("Login")
         login_btn.clicked.connect(self.on_login)
-
-        # Assemble
         for w in (self.user_in, self.pass_in, reg_btn, login_btn):
             layout.addWidget(w)
         auth.setLayout(layout)
-
-        # Add to stack as page 0
         self.stack.addWidget(auth)
 
     def _build_dashboard_page(self):
-
-        # Top bar: keyword, location, timeframe, buttons
-        top = QWidget()
-        top_l = QHBoxLayout()
-        
-
-        self.keywords_input = QLineEdit()
-        self.keywords_input.setPlaceholderText("Keywords")
+        """
+        Create the main dashboard: filters, map, and results list.
+        """
+        # Top filter bar
+        top = QWidget(); top_layout = QHBoxLayout()
+        self.keywords_input = QLineEdit(); self.keywords_input.setPlaceholderText("Keywords")
         self.categories_input = MultiSelectSearchBox(placeholder="Categories")
-        #self.categories_input.setPlaceholderText("Categories")
         self.location_input = MultiSelectSearchBox(placeholder="Locations")
-        #self.location_input.setPlaceholderText("Relevant Locations")
-        self.stime_input = QDateTimeEdit()
-        self.stime_input.setCalendarPopup(True)
-        self.stime_input.setDateTimeRange(
-            datetime.now().replace(year=datetime.now().year - 1),
-            datetime.now()
-        )
-        self.stime_input.setToolTip("Select start of task timeframe")
-        self.etime_input = QDateTimeEdit()
-        self.etime_input.setCalendarPopup(True)
-        self.etime_input.setDateTimeRange(
-            datetime.now(),
-            datetime.now().replace(year=datetime.now().year + 1)
-        )
-        self.etime_input.setToolTip("Select end of task timeframe")
+        self.stime_input = QDateTimeEdit(); self.stime_input.setCalendarPopup(True)
+        self.stime_input.setDateTimeRange(_dt.now().replace(year=_dt.now().year-1), _dt.now())
+        self.etime_input = QDateTimeEdit(); self.etime_input.setCalendarPopup(True)
+        self.etime_input.setDateTimeRange(_dt.now(), _dt.now().replace(year=_dt.now().year+1))
+        add_btn = QPushButton("Add Task"); add_btn.clicked.connect(self.on_add_task)
+        tasks_btn = QPushButton("Active Tasks"); tasks_btn.clicked.connect(self.on_show_active_tasks)
+        for w in (
+            self.keywords_input, self.categories_input, self.location_input,
+            self.stime_input, self.etime_input, add_btn, tasks_btn
+        ):
+            top_layout.addWidget(w)
+        top.setLayout(top_layout)
 
-        self.add_task_btn = QPushButton("Add Task")
-        self.add_task_btn.clicked.connect(self.on_add_task)
-        self.active_tasks_btn = QPushButton("Active Tasks")
-        self.active_tasks_btn.clicked.connect(self.on_show_active_tasks)
-
-        for widget in [self.keywords_input, self.categories_input, self.location_input,
-                       self.stime_input, self.etime_input, self.add_task_btn,
-                       self.active_tasks_btn]:
-            top_l.addWidget(widget)
-
-        top.setLayout(top_l)
-
-        # Bottom: splitter with map on left, results on right
+        # Splitter with map + results
         splitter = QSplitter(Qt.Horizontal)
+        self.map_view = QWebEngineView(); splitter.addWidget(self.map_view)
 
-        # Left: scrollable map
-        self.map_view = QWebEngineView()
-        self._load_map()
-
-        # TODO: Connect map click JS events to Python slot for reverse geocoding
-
-        # Right: results list
+        results_container = QWidget(); rc_layout = QVBoxLayout()
+        self.filter_input = QLineEdit(); self.filter_input.setPlaceholderText("Filter results…")
+        self.filter_input.textChanged.connect(self.on_filter_text_changed)
         self.results_list = QListWidget()
-        self.results_list.itemDoubleClicked.connect(self.on_result_double_click)
-        placeholder = QListWidgetItem("Results will appear here...")
+        placeholder = QListWidgetItem("Results will appear here…")
         placeholder.setFlags(placeholder.flags() & ~Qt.ItemIsSelectable)
         self.results_list.addItem(placeholder)
+        self.results_list.itemDoubleClicked.connect(self.on_result_double_click)
+        rc_layout.addWidget(self.filter_input); rc_layout.addWidget(self.results_list)
+        results_container.setLayout(rc_layout)
+        splitter.addWidget(results_container)
+        splitter.setStretchFactor(0, 1); splitter.setStretchFactor(1, 2)
 
-        splitter.addWidget(self.map_view)
-        splitter.addWidget(self.results_list)
-        splitter.setStretchFactor(0, 1) # map
-        splitter.setStretchFactor(1, 1) # results
-
-        # Combine 
-        dash = QWidget()
-        dash_layout = QVBoxLayout()
-        dash_layout.addWidget(top, stretch=0.5)
-        dash_layout.addWidget(splitter, stretch=6)
+        dash = QWidget(); dash_layout = QVBoxLayout()
+        dash_layout.addWidget(top, stretch=1)
+        dash_layout.addWidget(splitter, stretch=9)
         dash.setLayout(dash_layout)
-
-        # Add to stack as page 1
         self.stack.addWidget(dash)
 
     def start_periodic_refresh(self):
-        def refresh_loop():
+        """
+        In a daemon thread, refresh categories/locations every 5 minutes.
+        """
+        def loop():
             while True:
-                try:
-                    self.refresh_categories_and_locations()
-                except Exception as e:
-                    print(f"Error refreshing categories and locations: {e}")
-                time.sleep(300) # 5 minutes
-        threading.Thread(target=refresh_loop, daemon=True).start()
-    
+                self.refresh_categories_and_locations()
+                time.sleep(300)
+        threading.Thread(target=loop, daemon=True).start()
+
     def refresh_categories_and_locations(self):
         """
-        Refresh available categories and locations from dispatcher.
+        RPC calls to update the dropdowns with the latest catalog.
         """
-        cat_resp = self.dispatcher.ListAvailableCategories(ListCategoriesRequest())
-        loc_resp = self.dispatcher.ListAvailableLocations(ListLocationsRequest())
-        self.categories = list(cat_resp.categories)
-        self.locations = list(loc_resp.locations)
-        self.categories_input.set_items(self.categories)
-        self.location_input.set_items(self.locations)
-        print(f"Refreshed available categories: {self.categories}")
-        print(f"Refreshed available locations: {self.locations}")
-
+        try:
+            cat_resp = self.dispatcher.ListAvailableCategories(ListCategoriesRequest())
+            loc_resp = self.dispatcher.ListAvailableLocations(ListLocationsRequest())
+            self.categories = list(cat_resp.categories)
+            self.locations = list(loc_resp.locations)
+            self.categories_input.set_items(self.categories)
+            self.location_input.set_items(self.locations)
+            logger.info("Refreshed categories & locations")
+        except Exception as e:
+            logger.error(f"Filter refresh failed: {e}")
 
     def on_register(self):
+        """
+        Invoke RegisterRequest; on success, switch to dashboard.
+        """
         req = RegisterRequest(
             username=self.user_in.text(),
             password=self.pass_in.text()
         )
         try:
             resp = self.dispatcher.Register(req)
-            if resp.success:
-                # Show success popup
-                QMessageBox.information(self, "Registration Successful", resp.message)
-                # Automatically switch to dashboard
-                self.stack.setCurrentIndex(1)
-            else:
-                # Show error popup
-                QMessageBox.warning(self, "Registration Failed", resp.message)
         except grpc.RpcError as e:
-            # If gRPC itself fails (e.g., server down), show an error
+            logger.error(f"Register RPC error: {e.details()}")
             QMessageBox.critical(self, "Network Error", e.details())
+            return
+        if resp.success:
+            logger.info("User registered")
+            QMessageBox.information(self, "Registered", resp.message)
+            self.stack.setCurrentIndex(1)
+        else:
+            logger.warning("Registration failed")
+            QMessageBox.warning(self, "Registration Failed", resp.message)
 
     def on_login(self):
+        """
+        Invoke LoginRequest; on success, store token and switch UI.
+        """
         req = LoginRequest(
             username=self.user_in.text(),
             password=self.pass_in.text()
         )
-        resp = self.dispatcher.Login(req)
+        try:
+            resp = self.dispatcher.Login(req)
+        except grpc.RpcError as e:
+            logger.error(f"Login RPC error: {e.details()}")
+            QMessageBox.critical(self, "Network Error", e.details())
+            return
         if resp.success:
             self.auth_token = resp.token
+            logger.info(f"User logged in, token={resp.token}")
             self.stack.setCurrentIndex(1)
         else:
-            # show resp.message
-            pass
+            logger.warning("Login failed")
+            QMessageBox.warning(self, "Login Failed", resp.message)
 
-
-    def _load_map(self):
+    def _initialize_map(self):
         """
-        Generate initial folium map and load into QWebEngineView.
+        Create an initial Folium map and load it.
         """
-        m = folium.Map(location=[20, 0], zoom_start=2)
-        data = io.BytesIO()
-        m.save(data, close_file=False)
-        html = data.getvalue().decode()
-        self.map_view.setHtml(html)
+        logger.info("Initializing map...")
+        self.folium_map = folium.Map(location=[20, 0], zoom_start=2)
+        self._refresh_map_view()
 
-    def to_ts(self, qdt_edit):
+    def _refresh_map_view(self):
+        """
+        Render the Folium map into the QWebEngineView.
+        """
+        buf = io.BytesIO()
+        self.folium_map.save(buf, close_file=False)
+        self.map_view.setHtml(buf.getvalue().decode())
+
+    def _add_marker_to_map(self, info):
+        """
+        Add one marker dict {'lat','lon','tooltip','popup_text'} to the map.
+        """
+        folium.Marker(
+            [info["lat"], info["lon"]],
+            tooltip=info["tooltip"],
+            popup=folium.Popup(info["popup_text"], max_width=300),
+            icon=folium.Icon(icon="info-sign")
+        ).add_to(self.folium_map)
+        self._schedule_map_refresh()
+
+    def _schedule_map_refresh(self):
+        """
+        Batch frequent marker additions into one map refresh.
+        """
+        if not hasattr(self, "map_refresh_pending") or not self.map_refresh_pending:
+            self.map_refresh_pending = True
+            QTimer.singleShot(2000, self._perform_map_refresh)
+
+    def _perform_map_refresh(self):
+        """
+        Actually updates the HTML in the map view.
+        """
+        self._refresh_map_view()
+        self.map_refresh_pending = False
+
+    def to_ts(self, qdt):
+        """
+        Convert a QDateTimeEdit to a UTC Timestamp proto.
+        """
         ts = Timestamp()
-        dt = qdt_edit.dateTime().toPython()  # <--- FIXED
-        ts.FromDatetime(dt)
+        dt_local = qdt.dateTime().toPython()
+        local_tz = _dt.now().astimezone().tzinfo
+        dt_with_tz = dt_local.replace(tzinfo=local_tz)
+        ts.FromDatetime(dt_with_tz.astimezone(timezone.utc))
         return ts
-
 
     def on_add_task(self):
         """
-        Triggered when user clicks 'Add Task'.
-        Build task payload and send to dispatcher.
+        Build TaskRequest, call StartTask, then begin streaming results.
         """
-
-        token = self.auth_token
-        keywords = self.keywords_input.text()
-        categories = ",".join(self.categories_input.selected_items())
-        location = ",".join(self.location_input.selected_items())
-        start_time = self.to_ts(self.stime_input)
-        end_time = self.to_ts(self.etime_input)
-
+        logger.info("Submitting TaskRequest")
         req = TaskRequest(
-            token = token,
-            keywords = keywords,
-            categories = categories,
-            location = location,
-            start_time = start_time,
-            end_time = end_time
+            token=self.auth_token,
+            keywords=self.keywords_input.text(),
+            categories=",".join(self.categories_input.selected_items()),
+            location=",".join(self.location_input.selected_items()),
+            start_time=self.to_ts(self.stime_input),
+            end_time=self.to_ts(self.etime_input),
         )
         resp = self.dispatcher.StartTask(req)
         if resp.success:
             self.current_task_id = resp.task_id
-            self._start_result_stream()
+            self.active_tasks[resp.task_id] = {
+                "keywords": req.keywords,
+                "categories": self.categories_input.selected_items(),
+                "locations": self.location_input.selected_items(),
+            }
             QMessageBox.information(self, "Task Added", resp.message)
+            self._stream_results_loop()
         else:
-            QMessageBox.warning(self, "Task Addition Failed", resp.message)
+            QMessageBox.warning(self, "Add Task Failed", resp.message)
 
-        # TODO: Construct and send gRPC TaskRequest
-        print(f"Sending task: {keywords}, {categories}, {location}, from {start_time} to {end_time}")
+    def _stream_results_loop(self):
+        """
+        Daemon thread that consumes StreamResults and emits signals.
+        """
+        def loop():
+            for res in self.dispatcher.StreamResults(
+                TaskResultsRequest(token=self.auth_token, task_id=self.current_task_id)
+            ):
+                self.result_received.emit(res)
+        threading.Thread(target=loop, daemon=True).start()
+
+    def display_single_result(self, result):
+        """
+        Handle one TaskResult: JSON decode, NER→markers, and add to list.
+        """
+        payload = json.loads(result.result)
+        tid = payload["task_id"]
+        self.all_results.setdefault(tid, []).append(payload)
+
+        # NER geotagging
+        doc = self.nlp(payload.get("title", ""))
+        payload["marker_coords"] = []
+        for ent in doc.ents:
+            if ent.label_ in ("GPE", "LOC"):
+                coord = self.location_lookup.get(ent.text.strip().lower())
+                if coord:
+                    info = {
+                        "lat": coord[0],
+                        "lon": coord[1],
+                        "tooltip": ent.text.strip(),
+                        "popup_text": payload["title"],
+                    }
+                    payload["marker_coords"].append(info)
+                    if self.current_task_filter in (None, tid):
+                        self.marker_signal.emit(info)
+
+        # Add list item
+        if self.current_task_filter in (None, tid):
+            text = f"{payload['title']}\n{payload.get('published','')} - {payload.get('source','')}"
+            item = QListWidgetItem(text)
+            item.setData(Qt.UserRole, payload.get("link", ""))
+            if self.results_list.count() == 1 and "Results will appear here" in self.results_list.item(0).text():
+                self.results_list.takeItem(0)
+            self.results_list.addItem(item)
+
+    def on_filter_text_changed(self, text):
+        """
+        Hide/show list items based on substring match.
+        """
+        for i in range(self.results_list.count()):
+            item = self.results_list.item(i)
+            item.setHidden(text.lower() not in item.text().lower())
 
     def on_show_active_tasks(self):
         """
-        Show a dialog or sidebar with active tasks pulled from dispatcher.
+        Popup dialog for selecting which task’s results to display.
         """
-        print("Active tasks dialog placeholder")
+        dlg = QDialog(self)
+        dlg.setWindowTitle("Select Active Task")
+        dlg.resize(400, 300)
+        layout = QVBoxLayout(dlg)
+        lw = QListWidget()
+        all_item = QListWidgetItem("[All Tasks]")
+        all_item.setData(Qt.UserRole, None)
+        lw.addItem(all_item)
+        for tid, md in self.active_tasks.items():
+            text = f"[{tid[:6]}] KW:{md['keywords']} | CAT:{','.join(md['categories'])} | LOC:{','.join(md['locations'])}"
+            itm = QListWidgetItem(text)
+            itm.setData(Qt.UserRole, tid)
+            lw.addItem(itm)
+        lw.itemClicked.connect(lambda i, dlg=dlg: self._on_task_selected(i, dlg))
+        layout.addWidget(lw)
+        dlg.exec()
 
+    def _on_task_selected(self, item, dlg):
+        """
+        Apply the chosen task filter: rebuild map & list.
+        """
+        self.current_task_filter = item.data(Qt.UserRole)
+        # Rebuild map
+        self.folium_map = folium.Map(location=[20, 0], zoom_start=2)
+        for tid, lst in self.all_results.items():
+            if self.current_task_filter in (None, tid):
+                for p in lst:
+                    for info in p.get("marker_coords", []):
+                        folium.Marker(
+                            [info["lat"], info["lon"]],
+                            tooltip=info["tooltip"],
+                            popup=folium.Popup(info["popup_text"], max_width=300),
+                            icon=folium.Icon(icon="info-sign"),
+                        ).add_to(self.folium_map)
+        self._refresh_map_view()
 
-
-    def _start_result_stream(self):
-        def run_stream():
-            req = TaskResultsRequest(
-                token=self.auth_token,
-                task_id=self.current_task_id
-            )
-            for result in self.dispatcher.StreamResults(req):
-                print(f"Received result: {result}")
-                #self.display_single_result(result)
-                self.result_received.emit(result)
-        threading.Thread(target=run_stream, daemon=True).start()
-
-    def display_single_result(self, result):
-        # Remove placeholder if it exists
-        if self.results_list.count() == 1 and self.results_list.item(0).text() == "Results will appear here...":
-            self.results_list.takeItem(0)
-
-        # Add real result
-        item = QListWidgetItem(result.title)
-        item.setData(Qt.UserRole, result.url)
-        self.results_list.addItem(item)
-
+        # Rebuild list
+        self.results_list.clear()
+        found = False
+        for tid, lst in self.all_results.items():
+            if self.current_task_filter in (None, tid):
+                for p in lst:
+                    it = QListWidgetItem(f"{p['title']}\n{p.get('published','')} - {p.get('source','')}")
+                    it.setData(Qt.UserRole, p.get("link",""))
+                    self.results_list.addItem(it)
+                    found = True
+        if not found:
+            ph = QListWidgetItem("No results for this task.")
+            ph.setFlags(ph.flags() & ~Qt.ItemIsSelectable)
+            self.results_list.addItem(ph)
+        dlg.accept()
 
     def on_result_double_click(self, item):
+        """
+        Open a result’s URL in the default browser.
+        """
         url = item.data(Qt.UserRole)
         if url:
-            print(f"Opening URL: {url}")
             webbrowser.open(url)
 
 
-
-
-
-def main():
+if __name__ == "__main__":
     app = QApplication(sys.argv)
-    
-    # Directly launch the main window without login for development
-    mw = MainWindow()
-    mw.show()
-    mw.stack.setCurrentIndex(1)
-
+    window = MainWindow()
+    window.show()
+    window.stack.setCurrentIndex(0)  # start at login
     sys.exit(app.exec())
-
-
-if __name__ == '__main__':
-    main()

@@ -2,6 +2,7 @@
 
 import sqlite3
 import json
+import os
 import datetime
 from typing import List, Optional, Dict, Tuple, Any
 
@@ -9,22 +10,45 @@ class TaskManager:
     """Persistent store for TaskRequest metadata and status."""
 
     def __init__(self, db_path: str = "dispatcher/tasks.db"):
-        self.conn = sqlite3.connect(db_path, check_same_thread=False)
-        self.conn.execute("""
-            CREATE TABLE IF NOT EXISTS tasks (
-              task_id      TEXT PRIMARY KEY,
-              token        TEXT    NOT NULL,
-              keywords     TEXT    NOT NULL,
-              categories   TEXT    NOT NULL,
-              locations    TEXT    NOT NULL,
-              start_time   TEXT    NOT NULL,
-              end_time     TEXT    NOT NULL,
-              status       TEXT    NOT NULL,
-              created_at   TEXT    NOT NULL,
-              updated_at   TEXT    NOT NULL
-            )
-        """)
-        self.conn.commit()
+        """
+        Open or create the tasks database.  If the existing file is not a valid
+        SQLite database (corrupted or truncated), delete it and start fresh.
+        """
+        need_init = not os.path.exists(db_path)
+        # Attempt to open an existing database
+        try:
+            self.conn = sqlite3.connect(db_path, check_same_thread=False)
+            if not need_init:
+                # Probe the schema; will raise DatabaseError if file is invalid
+                self.conn.execute("PRAGMA schema_version;")
+        except sqlite3.DatabaseError:
+            # Corrupted database: remove file and recreate
+            try:
+                self.conn.close()
+            except Exception:
+                pass
+            os.remove(db_path)
+            self.conn = sqlite3.connect(db_path, check_same_thread=False)
+            need_init = True
+
+        if need_init:
+            # Create the tasks table from scratch
+            self.conn.execute("""
+                CREATE TABLE IF NOT EXISTS tasks (
+                  task_id      TEXT PRIMARY KEY,
+                  token        TEXT    NOT NULL,
+                  keywords     TEXT    NOT NULL,
+                  categories   TEXT    NOT NULL,
+                  locations    TEXT    NOT NULL,
+                  start_time   TEXT    NOT NULL,
+                  end_time     TEXT    NOT NULL,
+                  status       TEXT    NOT NULL,
+                  created_at   TEXT    NOT NULL,
+                  updated_at   TEXT    NOT NULL
+                )
+            """)
+            # You may also want to insert an index on status or timestamps here
+            self.conn.commit()
 
     def _now(self) -> str:
         return datetime.datetime.now(datetime.timezone.utc).isoformat()

@@ -103,9 +103,8 @@ message TaskResultsRequest {
 // Individual result entry sent in the StreamResults RPC
 message TaskResult {
   string                     task_id   = 1; // Related task identifier
-  string                     title     = 2; // Headline or result title
-  string                     url       = 3; // Source URL for the result
-  google.protobuf.Timestamp  timestamp = 4; // Publication time of result
+  string                     result    = 2; // JSON‐encoded result payload
+  google.protobuf.Timestamp  timestamp = 3; // Time result was generated
 }
 
 // Empty request messages for list retrieval (placeholders)
@@ -171,10 +170,12 @@ message TaskStreamRequest {
 // Task assignment sent from dispatcher to collector
 message TaskAssignment {
   string                     task_id    = 1; // Unique task identifier
-  string                     category   = 2; // Task category
-  string                     location   = 3; // Task location
-  google.protobuf.Timestamp  start_time = 4; // When to begin collection
-  string                     parameters = 5; // JSON-encoded task details
+  string                     keywords   = 2; // Task keywords
+  string                     category   = 3; // Task category
+  string                     location   = 4; // Task location
+  google.protobuf.Timestamp  start_time = 5; // When to begin collection
+  google.protobuf.Timestamp  end_time = 6; // When to end collection
+  repeated string            sources    = 7; // Sources
 }
 
 // Task result submitted by collector

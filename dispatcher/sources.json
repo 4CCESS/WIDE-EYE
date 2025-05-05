@@ -1,157 +1,156 @@
 [
-    {
-      "id": "source_deutsche_welle_world",
-      "name": "Deutsche Welle – World",
-      "url": "https://rss.dw.com/rdf/rss-en-all",
-      "locations": ["International"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_reuters_world_news",
-      "name": "Reuters – World News",
-      "url": "https://news.google.com/rss/search?q=site%3Areuters.com&hl=en-US&gl=US&ceid=US%3Aen",
-      "locations": ["International"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_the_independent_world_news",
-      "name": "The Independent – World News",
-      "url": "https://www.independent.co.uk/news/world/rss",
-      "locations": ["International"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_the_guardian_world_news",
-      "name": "The Guardian – World News",
-      "url": "https://www.theguardian.com/world/rss",
-      "locations": ["International"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_bbc_news_world",
-      "name": "BBC News – World",
-      "url": "http://feeds.bbci.co.uk/news/world/rss.xml",
-      "locations": ["International"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_unian_english",
-      "name": "Unian (English)",
-      "url": "https://www.unian.info/rss",
-      "locations": ["Ukraine", "Russia"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_tass",
-      "name": "TASS",
-      "url": "https://tass.com/rss/v2.xml",
-      "locations": ["Ukraine", "Russia"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_rt",
-      "name": "RT",
-      "url": "https://www.rt.com/rss/news/",
-      "locations": ["Ukraine", "Russia"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_the_moscow_times",
-      "name": "The Moscow Times",
-      "url": "https://www.themoscowtimes.com/rss/news",
-      "locations": ["Ukraine", "Russia"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_taipei_times",
-      "name": "Taipei Times",
-      "url": "https://www.taipeitimes.com/xml/index.rss",
-      "locations": ["Taiwan", "China"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_sixth_tone",
-      "name": "Sixth Tone",
-      "url": "https://api.sixthtone.com/cont/output/rssApi",
-      "locations": ["Taiwan", "China"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_south_china_morning_post_china",
-      "name": "South China Morning Post – China",
-      "url": "https://www.scmp.com/rss/91/feed",
-      "locations": ["Taiwan", "China"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_financial_times_china",
-      "name": "Financial Times – China",
-      "url": "https://www.ft.com/world/asia-pacific/China?format=rss",
-      "locations": ["Taiwan", "China"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_the_texas_tribune",
-      "name": "The Texas Tribune",
-      "url": "https://feeds.texastribune.org/feeds/main/",
-      "locations": ["Texas"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_abc13_houston",
-      "name": "ABC13 Houston",
-      "url": "https://abc13.com/feed/",
-      "locations": ["Texas"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_mysanantonio",
-      "name": "MySanAntonio",
-      "url": "https://www.mysanantonio.com/default/feed/local-news-176.php",
-      "locations": ["Texas"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_wfaa",
-      "name": "WFAA",
-      "url": "https://www.wfaa.com/feeds/syndication/rss/news",
-      "locations": ["Texas"],
-      "categories": ["General"]
-    },
-    {
-      "id": "source_hacker_news",
-      "name": "Hacker News",
-      "url": "https://feeds.feedburner.com/TheHackersNews",
-      "locations": ["Domain-Specific"],
-      "categories": ["Cybersecurity"]
-    },
-    {
-      "id": "source_dark_reading",
-      "name": "Dark Reading",
-      "url": "https://www.darkreading.com/rss.xml",
-      "locations": ["Domain-Specific"],
-      "categories": ["Cybersecurity"]
-    },
-    {
-      "id": "source_hackread",
-      "name": "HackRead",
-      "url": "https://hackread.com/feed/",
-      "locations": ["Domain-Specific"],
-      "categories": ["Cybersecurity"]
-    },
-    {
-      "id": "source_nyt_fema",
-      "name": "NYT FEMA",
-      "url": "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/organization/federal-emergency-management-agency/rss.xml",
-      "locations": ["Domain-Specific"],
-      "categories": ["Emergency Management"]
-    },
-    {
-      "id": "source_colorado_emergency_management_feed",
-      "name": "Colorado Emergency Management Feed",
-      "url": "http://feeds.feedburner.com/COEmergency",
-      "locations": ["Colorado"],
-      "categories": ["Emergency Management"]
-    }
-  ]
-  
+  {
+    "id": "https://rss.dw.com/rdf/rss-en-all",
+    "name": "Deutsche Welle – World",
+    "url": "https://rss.dw.com/rdf/rss-en-all",
+    "locations": ["International"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://news.google.com/rss/search?q=site%3Areuters.com&hl=en-US&gl=US&ceid=US%3Aen",
+    "name": "Reuters – World News",
+    "url": "https://news.google.com/rss/search?q=site%3Areuters.com&hl=en-US&gl=US&ceid=US%3Aen",
+    "locations": ["International"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.independent.co.uk/news/world/rss",
+    "name": "The Independent – World News",
+    "url": "https://www.independent.co.uk/news/world/rss",
+    "locations": ["International"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.theguardian.com/world/rss",
+    "name": "The Guardian – World News",
+    "url": "https://www.theguardian.com/world/rss",
+    "locations": ["International"],
+    "categories": ["General"]
+  },
+  {
+    "id": "http://feeds.bbci.co.uk/news/world/rss.xml",
+    "name": "BBC News – World",
+    "url": "http://feeds.bbci.co.uk/news/world/rss.xml",
+    "locations": ["International"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.unian.info/rss",
+    "name": "Unian (English)",
+    "url": "https://www.unian.info/rss",
+    "locations": ["Ukraine", "Russia"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://tass.com/rss/v2.xml",
+    "name": "TASS",
+    "url": "https://tass.com/rss/v2.xml",
+    "locations": ["Ukraine", "Russia"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.rt.com/rss/news/",
+    "name": "RT",
+    "url": "https://www.rt.com/rss/news/",
+    "locations": ["Ukraine", "Russia"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.themoscowtimes.com/rss/news",
+    "name": "The Moscow Times",
+    "url": "https://www.themoscowtimes.com/rss/news",
+    "locations": ["Ukraine", "Russia"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.taipeitimes.com/xml/index.rss",
+    "name": "Taipei Times",
+    "url": "https://www.taipeitimes.com/xml/index.rss",
+    "locations": ["Taiwan", "China"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://api.sixthtone.com/cont/output/rssApi",
+    "name": "Sixth Tone",
+    "url": "https://api.sixthtone.com/cont/output/rssApi",
+    "locations": ["Taiwan", "China"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.scmp.com/rss/91/feed",
+    "name": "South China Morning Post – China",
+    "url": "https://www.scmp.com/rss/91/feed",
+    "locations": ["Taiwan", "China"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.ft.com/world/asia-pacific/China?format=rss",
+    "name": "Financial Times – China",
+    "url": "https://www.ft.com/world/asia-pacific/China?format=rss",
+    "locations": ["Taiwan", "China"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://feeds.texastribune.org/feeds/main/",
+    "name": "The Texas Tribune",
+    "url": "https://feeds.texastribune.org/feeds/main/",
+    "locations": ["Texas"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://abc13.com/feed/",
+    "name": "ABC13 Houston",
+    "url": "https://abc13.com/feed/",
+    "locations": ["Texas"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.mysanantonio.com/default/feed/local-news-176.php",
+    "name": "MySanAntonio",
+    "url": "https://www.mysanantonio.com/default/feed/local-news-176.php",
+    "locations": ["Texas"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://www.wfaa.com/feeds/syndication/rss/news",
+    "name": "WFAA",
+    "url": "https://www.wfaa.com/feeds/syndication/rss/news",
+    "locations": ["Texas"],
+    "categories": ["General"]
+  },
+  {
+    "id": "https://feeds.feedburner.com/TheHackersNews",
+    "name": "Hacker News",
+    "url": "https://feeds.feedburner.com/TheHackersNews",
+    "locations": ["Domain-Specific"],
+    "categories": ["Cybersecurity"]
+  },
+  {
+    "id": "https://www.darkreading.com/rss.xml",
+    "name": "Dark Reading",
+    "url": "https://www.darkreading.com/rss.xml",
+    "locations": ["Domain-Specific"],
+    "categories": ["Cybersecurity"]
+  },
+  {
+    "id": "https://hackread.com/feed/",
+    "name": "HackRead",
+    "url": "https://hackread.com/feed/",
+    "locations": ["Domain-Specific"],
+    "categories": ["Cybersecurity"]
+  },
+  {
+    "id": "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/organization/federal-emergency-management-agency/rss.xml",
+    "name": "NYT FEMA",
+    "url": "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/organization/federal-emergency-management-agency/rss.xml",
+    "locations": ["Domain-Specific"],
+    "categories": ["Emergency Management"]
+  },
+  {
+    "id": "http://feeds.feedburner.com/COEmergency",
+    "name": "Colorado Emergency Management Feed",
+    "url": "http://feeds.feedburner.com/COEmergency",
+    "locations": ["Colorado"],
+    "categories": ["Emergency Management"]
+  }
+]

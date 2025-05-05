@@ -26,7 +26,10 @@ if _version_not_supported:
 
 
 class ClientDispatcherStub(object):
-    """Service for client ↔ dispatcher communication
+    """-----------------------------------------------------------------------------
+    Client-facing service: handles user registration, authentication, task creation,
+    and result streaming between the client application and the dispatcher.
+    -----------------------------------------------------------------------------
     """
 
     def __init__(self, channel):
@@ -68,46 +71,50 @@ class ClientDispatcherStub(object):
 
 
 class ClientDispatcherServicer(object):
-    """Service for client ↔ dispatcher communication
+    """-----------------------------------------------------------------------------
+    Client-facing service: handles user registration, authentication, task creation,
+    and result streaming between the client application and the dispatcher.
+    -----------------------------------------------------------------------------
     """
 
     def Register(self, request, context):
-        """User registration
+        """Register a new user account
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Login(self, request, context):
-        """User login
+        """Authenticate an existing user
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StartTask(self, request, context):
-        """Start a new task
+        """Submit a new OSINT collection task
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StreamResults(self, request, context):
-        """Stream results for a given task
+        """Stream incremental results for a running task
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListAvailableCategories(self, request, context):
-        """Send available categories and locations
+        """Retrieve the list of available categories for tasks
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListAvailableLocations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve the list of available locations for tasks
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -154,7 +161,10 @@ def add_ClientDispatcherServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ClientDispatcher(object):
-    """Service for client ↔ dispatcher communication
+    """-----------------------------------------------------------------------------
+    Client-facing service: handles user registration, authentication, task creation,
+    and result streaming between the client application and the dispatcher.
+    -----------------------------------------------------------------------------
     """
 
     @staticmethod
@@ -309,6 +319,267 @@ class ClientDispatcher(object):
             '/wide_eye.ClientDispatcher/ListAvailableLocations',
             proto_dot_dispatcher__pb2.ListLocationsRequest.SerializeToString,
             proto_dot_dispatcher__pb2.ListLocationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+
+class CollectorDispatcherStub(object):
+    """-----------------------------------------------------------------------------
+    Collector-facing service: manages collector registration, login, heartbeat,
+    task assignment streaming, and result submission.
+    -----------------------------------------------------------------------------
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.RegisterCollector = channel.unary_unary(
+                '/wide_eye.CollectorDispatcher/RegisterCollector',
+                request_serializer=proto_dot_dispatcher__pb2.CollectorRegisterRequest.SerializeToString,
+                response_deserializer=proto_dot_dispatcher__pb2.CollectorRegisterResponse.FromString,
+                _registered_method=True)
+        self.LoginCollector = channel.unary_unary(
+                '/wide_eye.CollectorDispatcher/LoginCollector',
+                request_serializer=proto_dot_dispatcher__pb2.CollectorLoginRequest.SerializeToString,
+                response_deserializer=proto_dot_dispatcher__pb2.CollectorLoginResponse.FromString,
+                _registered_method=True)
+        self.Heartbeat = channel.unary_unary(
+                '/wide_eye.CollectorDispatcher/Heartbeat',
+                request_serializer=proto_dot_dispatcher__pb2.HeartbeatRequest.SerializeToString,
+                response_deserializer=proto_dot_dispatcher__pb2.HeartbeatResponse.FromString,
+                _registered_method=True)
+        self.StreamTasks = channel.unary_stream(
+                '/wide_eye.CollectorDispatcher/StreamTasks',
+                request_serializer=proto_dot_dispatcher__pb2.TaskStreamRequest.SerializeToString,
+                response_deserializer=proto_dot_dispatcher__pb2.TaskAssignment.FromString,
+                _registered_method=True)
+        self.SubmitTaskResult = channel.unary_unary(
+                '/wide_eye.CollectorDispatcher/SubmitTaskResult',
+                request_serializer=proto_dot_dispatcher__pb2.CollectorTaskResult.SerializeToString,
+                response_deserializer=proto_dot_dispatcher__pb2.CollectorTaskResultAck.FromString,
+                _registered_method=True)
+
+
+class CollectorDispatcherServicer(object):
+    """-----------------------------------------------------------------------------
+    Collector-facing service: manages collector registration, login, heartbeat,
+    task assignment streaming, and result submission.
+    -----------------------------------------------------------------------------
+    """
+
+    def RegisterCollector(self, request, context):
+        """Register a new collector process with the dispatcher
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def LoginCollector(self, request, context):
+        """Authenticate a registered collector and obtain a session token
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Heartbeat(self, request, context):
+        """Send periodic health check to dispatcher
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def StreamTasks(self, request, context):
+        """Receive a stream of task assignments from dispatcher
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SubmitTaskResult(self, request, context):
+        """Submit results from a completed task back to dispatcher
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_CollectorDispatcherServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'RegisterCollector': grpc.unary_unary_rpc_method_handler(
+                    servicer.RegisterCollector,
+                    request_deserializer=proto_dot_dispatcher__pb2.CollectorRegisterRequest.FromString,
+                    response_serializer=proto_dot_dispatcher__pb2.CollectorRegisterResponse.SerializeToString,
+            ),
+            'LoginCollector': grpc.unary_unary_rpc_method_handler(
+                    servicer.LoginCollector,
+                    request_deserializer=proto_dot_dispatcher__pb2.CollectorLoginRequest.FromString,
+                    response_serializer=proto_dot_dispatcher__pb2.CollectorLoginResponse.SerializeToString,
+            ),
+            'Heartbeat': grpc.unary_unary_rpc_method_handler(
+                    servicer.Heartbeat,
+                    request_deserializer=proto_dot_dispatcher__pb2.HeartbeatRequest.FromString,
+                    response_serializer=proto_dot_dispatcher__pb2.HeartbeatResponse.SerializeToString,
+            ),
+            'StreamTasks': grpc.unary_stream_rpc_method_handler(
+                    servicer.StreamTasks,
+                    request_deserializer=proto_dot_dispatcher__pb2.TaskStreamRequest.FromString,
+                    response_serializer=proto_dot_dispatcher__pb2.TaskAssignment.SerializeToString,
+            ),
+            'SubmitTaskResult': grpc.unary_unary_rpc_method_handler(
+                    servicer.SubmitTaskResult,
+                    request_deserializer=proto_dot_dispatcher__pb2.CollectorTaskResult.FromString,
+                    response_serializer=proto_dot_dispatcher__pb2.CollectorTaskResultAck.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'wide_eye.CollectorDispatcher', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('wide_eye.CollectorDispatcher', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class CollectorDispatcher(object):
+    """-----------------------------------------------------------------------------
+    Collector-facing service: manages collector registration, login, heartbeat,
+    task assignment streaming, and result submission.
+    -----------------------------------------------------------------------------
+    """
+
+    @staticmethod
+    def RegisterCollector(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/wide_eye.CollectorDispatcher/RegisterCollector',
+            proto_dot_dispatcher__pb2.CollectorRegisterRequest.SerializeToString,
+            proto_dot_dispatcher__pb2.CollectorRegisterResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def LoginCollector(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/wide_eye.CollectorDispatcher/LoginCollector',
+            proto_dot_dispatcher__pb2.CollectorLoginRequest.SerializeToString,
+            proto_dot_dispatcher__pb2.CollectorLoginResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Heartbeat(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/wide_eye.CollectorDispatcher/Heartbeat',
+            proto_dot_dispatcher__pb2.HeartbeatRequest.SerializeToString,
+            proto_dot_dispatcher__pb2.HeartbeatResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def StreamTasks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/wide_eye.CollectorDispatcher/StreamTasks',
+            proto_dot_dispatcher__pb2.TaskStreamRequest.SerializeToString,
+            proto_dot_dispatcher__pb2.TaskAssignment.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SubmitTaskResult(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/wide_eye.CollectorDispatcher/SubmitTaskResult',
+            proto_dot_dispatcher__pb2.CollectorTaskResult.SerializeToString,
+            proto_dot_dispatcher__pb2.CollectorTaskResultAck.FromString,
             options,
             channel_credentials,
             insecure,

@@ -12,6 +12,7 @@ from dispatcher.dispatcher import DispatcherService
 from dispatcher.task_manager import TaskManager
 from dispatcher.collector_manager import CollectorManager
 from proto.dispatcher_pb2 import TaskRequest
+from dispatcher.source_catalog import load_sources
 
 # Dummy gRPC context for grpc_safe wrapper
 def DummyContext():
@@ -29,7 +30,9 @@ def make_timestamp(dt: datetime.datetime) -> Timestamp:
 def dispatcher(tmp_path):
     """Create a fresh DispatcherService instance with a temp database and collector."""
     db_file = tmp_path / "tasks.db"
-    svc = DispatcherService(collector_stub=None, db_path=str(db_file))
+    svc = DispatcherService(task_manager=TaskManager(db_path=str(db_file)),
+                            collector_manager=CollectorManager(),
+                            sources=load_sources("dispatcher/sources.json"))
 
     # Override the persistent task manager to use a temp DB
     svc.task_manager = TaskManager(db_path=str(db_file))

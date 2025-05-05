@@ -1,0 +1,8 @@
+{
+    "dispatcher_address": "localhost",
+    "dispatcher_port": 50052,
+    "heartbeat_interval": 30,
+    "rss_refresh": 60,
+    "log_file": "collector/collector.log"
+  }
+  
