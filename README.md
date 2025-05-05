@@ -1,8 +1,5 @@
-Thought for a couple of seconds
 
-
-```markdown
-# WIDE EYE / GlobeSense OSINT Dashboard
+# WIDE EYE OSINT Dashboard
 
 **COMPSCI 2620 Final Project**  
 **Spring 2025**  
@@ -12,7 +9,7 @@ Thought for a couple of seconds
 
 ## Overview
 
-WIDE EYE (a.k.a. GlobeSense) is a lightweight, scalable Open-Source Intelligence (OSINT) system designed for distributed, task-driven collection and analysis of publicly-available information. It currently supports:
+WIDE EYE is a lightweight, scalable Open-Source Intelligence (OSINT) system designed for distributed, task-driven collection and analysis of publicly-available information. It currently supports:
 
 - **RSS/Atom feed ingestion**  
 - **GDACS disaster alerts** (prototype)  
