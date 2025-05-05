@@ -1,5 +1,5 @@
 
-# WIDE EYE OSINT Dashboard
+# WIDE EYE
 
 **COMPSCI 2620 Final Project**  
 **Spring 2025**  
@@ -73,7 +73,7 @@ Persistence: SQLite (tasks.db, users.db)
   pip install \
     PySide6 folium spacy grpcio grpcio-tools protobuf \
     feedparser aiohttp aio-georss-gdacs
-````
+  ```
 
 * **spaCy model** (run once):
 
